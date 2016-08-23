@@ -11,8 +11,8 @@
 # Package Files #
 **/*.jar
 **/*.war
-**/*.ear
-
+#**/*.ear
+ 
  
 ######################
 # Windows
@@ -28,11 +28,11 @@ Desktop.ini
 # Eclipse
 #####################
  
-**/.settings
+#**/.settings
 **/target
 # **/.classpath
 **/.metadata
 # **/.project
-**/.factorypath
-**/*.prefs
-**/.settings/
+#**/.factorypath
+#**/*.prefs
+#**/.settings/

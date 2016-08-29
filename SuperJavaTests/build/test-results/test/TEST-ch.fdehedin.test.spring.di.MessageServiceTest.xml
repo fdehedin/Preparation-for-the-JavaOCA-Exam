@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.fdehedin.test.spring.di.MessageServiceTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-08-29T20:42:15" hostname="juiceterrys-MacBook-Pro.local" time="1.128">
+  <properties/>
+  <testcase name="processMessage" classname="ch.fdehedin.test.spring.di.MessageServiceTest" time="1.128"/>
+  <system-out><![CDATA[22:42:16.747 [Test worker] DEBUG c.f.t.s.h.c.HelloWorldController - EmailService: Message Hi there, please klja�kdsj�fdsa sent to hans.meier@test.ch
+]]></system-out>
+  <system-err><![CDATA[Aug 29, 2016 10:42:16 PM org.springframework.context.annotation.AnnotationConfigApplicationContext prepareRefresh
+INFO: Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@351463b5: startup date [Mon Aug 29 22:42:16 CEST 2016]; root of context hierarchy
+Aug 29, 2016 10:42:16 PM org.springframework.context.annotation.AnnotationConfigApplicationContext doClose
+INFO: Closing org.springframework.context.annotation.AnnotationConfigApplicationContext@351463b5: startup date [Mon Aug 29 22:42:16 CEST 2016]; root of context hierarchy
+]]></system-err>
+</testsuite>

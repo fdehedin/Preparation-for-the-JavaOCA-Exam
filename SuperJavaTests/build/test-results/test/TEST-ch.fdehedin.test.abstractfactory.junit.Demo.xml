@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="ch.fdehedin.test.abstractfactory.junit.Demo" tests="1" skipped="0" failures="0" errors="0" timestamp="2016-08-29T20:42:15" hostname="juiceterrys-MacBook-Pro.local" time="0.012">
+  <properties/>
+  <testcase name="drawShape" classname="ch.fdehedin.test.abstractfactory.junit.Demo" time="0.012"/>
+  <system-out><![CDATA[aaaight, testin time...
+i^am a circle and now im drawing
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -16,6 +16,8 @@ public class FirstNonRepeatableCharFinder {
 
 		LinkedHashMap<String, Integer> lhm = new LinkedHashMap<String, Integer>();
 
+	
+		
 		for (int i = 0; i < arrChars.length; i++) {
 			if (!lhm.containsKey(arrChars[i])) {
 			//	System.out.println("putting key: " + arrChars[i]);

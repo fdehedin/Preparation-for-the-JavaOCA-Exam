@@ -1,4 +1,4 @@
-package ch.fdehedin.test;
+package ch.fdehedin.test.chapter1;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;
@@ -7,7 +7,7 @@ import java.util.Map.Entry;
 
 public class FirstNonRepeatableCharFinder {
 
-	public static final String test = "löfölasjkdpfölkasdjflökasjdföjklasdf";
+	public static final String test = "lï¿½fï¿½lasjkdpfï¿½lkasdjflï¿½kasjdfï¿½jklasdf";
 
 	public void findFirstNonRepeatedChar(String stringToFind) {
 

@@ -1,4 +1,4 @@
-package ch.fdehedin.test;
+package ch.fdehedin.test.chapter1;
 
 public class Sequence {
 	Sequence() {

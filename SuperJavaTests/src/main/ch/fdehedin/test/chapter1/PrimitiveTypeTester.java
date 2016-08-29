@@ -1,4 +1,4 @@
-package ch.fdehedin.test;
+package ch.fdehedin.test.chapter1;
 
 import java.text.NumberFormat;
 
@@ -68,6 +68,20 @@ public class PrimitiveTypeTester {
 		// String 45test;DOES NOT COMPILE
 		// String &test;DOES NOT COMPILE
 
+		//initialization test
+		int e = 10;
+		int w;
+		w = 3;//if not initialized, it wll not compile..
+		int reply = e + w;
+		
+		//branch test
+		int answer;
+		int onlyOneBranch;
+		boolean t = true;
+		if(t){
+			answer = 1;
+		}
+	//	System.out.println("answer: "+answer);//DOES NOT COMPILE
 	}
 
 }

@@ -9,7 +9,6 @@ import org.slf4j.LoggerFactory;
 public class ClassVariables {
  
 	private static final Logger logger = LoggerFactory.getLogger(ClassVariables.class);
-
 	
 	static boolean b;
 	static byte b1;
@@ -20,6 +19,8 @@ public class ClassVariables {
 	static Object o;
 	
 	public static void main(String[] args) {
+	boolean s;
+//	logger.debug("boolean: "+s); //method variables need to be initialized..
 	
 		logger.debug("boolean: "+b);
 		logger.debug("byte: "+b1);

@@ -7,9 +7,15 @@ public class InnerClassTest {
 	int num;
 
 	// inner class
-	public class Inner_Demo {
+	public class Inner_Demo extends AnonymousInner{
 		public void print() {
 			System.out.println("This is an inner class");
+		}
+
+		@Override
+		public void mymethod() {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 

@@ -1,14 +1,21 @@
 package ch.fdehedin.test.chapter1;
 
- class MultiClass {
+public  class MultiClass {
 
 	public static void main(final String[] args) {
 		System.out.println(MultiClass.class.getName());
 	}
+	
+	static class InnerClass {
+		public static void main(final String[] args) {
+			System.out.println(InnerClass.class.getName());
+		}
+	}	
+	
 }
 
-class SecondClass {
+ class SecondClass {
 	public static void main(final String[] args) {
-		System.out.println(MultiClass.class.getName());
+		System.out.println(SecondClass.class.getName());
 	}
 }

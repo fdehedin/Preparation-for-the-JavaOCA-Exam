@@ -10,6 +10,7 @@ public class ClassVariables {
  
 	private static final Logger logger = LoggerFactory.getLogger(ClassVariables.class);
 	
+	String name;
 	static boolean b;
 	static byte b1;
 	static short s;
@@ -19,8 +20,8 @@ public class ClassVariables {
 	static Object o;
 	
 	public static void main(String[] args) {
-	boolean s;
-//	logger.debug("boolean: "+s); //method variables need to be initialized..
+	boolean b2;
+	//logger.debug("boolean: "+b2); //method variables need to be initialized..
 	
 		logger.debug("boolean: "+b);
 		logger.debug("byte: "+b1);

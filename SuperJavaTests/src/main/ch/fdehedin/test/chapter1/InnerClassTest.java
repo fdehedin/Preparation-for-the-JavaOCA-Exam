@@ -7,7 +7,7 @@ public class InnerClassTest {
 	int num;
 
 	// inner class
-	private class Inner_Demo {
+	public class Inner_Demo {
 		public void print() {
 			System.out.println("This is an inner class");
 		}

@@ -1,7 +1,7 @@
 package ch.fdehedin.test.chapter1;
 
-public class Sequence {
-	Sequence() {
+public class VariableTester {
+	VariableTester() {
 		System.out.print("c ");
 	}
 
@@ -10,7 +10,7 @@ public class Sequence {
 	}
 
 	public static void main(String[] args) {
-		new Sequence().go();
+		new VariableTester().go();
 	}
 
 	void go() {

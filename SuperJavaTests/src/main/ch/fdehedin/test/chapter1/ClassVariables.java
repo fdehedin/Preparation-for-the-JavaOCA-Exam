@@ -8,6 +8,11 @@ import org.slf4j.LoggerFactory;
 
 public class ClassVariables {
  
+	private int inte = 123;
+	
+	double amont = 0b101;
+	double amont2 = 0xE;
+	
 	private static final Logger logger = LoggerFactory.getLogger(ClassVariables.class);
 	
 	String name;
@@ -20,9 +25,12 @@ public class ClassVariables {
 	static Object o;
 	
 	public static void main(String[] args) {
-	boolean b2;
+	 
+		ClassVariables uio = new ClassVariables();
+		System.out.println(uio.inte); 
+		boolean b2;
 	//logger.debug("boolean: "+b2); //method variables need to be initialized..
-	
+		System.out.println(i); 
 		logger.debug("boolean: "+b);
 		logger.debug("byte: "+b1);
 		logger.debug("short: "+s);

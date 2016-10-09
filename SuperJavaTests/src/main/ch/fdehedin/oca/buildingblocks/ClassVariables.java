@@ -1,5 +1,5 @@
 //comment for package
-package ch.fdehedin.test.chapter1;
+package ch.fdehedin.oca.buildingblocks;
 
 import org.junit.Test;
 

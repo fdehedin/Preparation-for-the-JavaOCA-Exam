@@ -1,4 +1,4 @@
-package ch.fdehedin.test.abstractfactory;
+package ch.fdehedin.test.patterns.abstractfactory;
 
 public abstract class AbstractFactory {
 	public abstract Color getColor(String color);

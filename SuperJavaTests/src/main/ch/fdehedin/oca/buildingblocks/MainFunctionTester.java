@@ -1,4 +1,4 @@
-package ch.fdehedin.test.chapter1;
+package ch.fdehedin.oca.buildingblocks;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

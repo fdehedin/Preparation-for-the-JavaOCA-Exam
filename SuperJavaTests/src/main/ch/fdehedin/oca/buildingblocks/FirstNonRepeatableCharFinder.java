@@ -1,4 +1,4 @@
-package ch.fdehedin.test.chapter1;
+package ch.fdehedin.oca.buildingblocks;
 
 import java.util.Iterator;
 import java.util.LinkedHashMap;

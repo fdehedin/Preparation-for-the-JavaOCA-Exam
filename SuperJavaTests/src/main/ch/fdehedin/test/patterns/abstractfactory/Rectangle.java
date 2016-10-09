@@ -1,4 +1,4 @@
-package ch.fdehedin.test.abstractfactory;
+package ch.fdehedin.test.patterns.abstractfactory;
 
 public class Rectangle implements Shape{
 

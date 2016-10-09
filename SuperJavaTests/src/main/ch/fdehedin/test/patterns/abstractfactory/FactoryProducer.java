@@ -1,4 +1,4 @@
-package ch.fdehedin.test.abstractfactory;
+package ch.fdehedin.test.patterns.abstractfactory;
 
 public class FactoryProducer {
 	public static AbstractFactory getFactory(String choice) {

@@ -2,9 +2,9 @@ package ch.fdehedin.test.abstractfactory.junit;
 
 import org.junit.Test;
 
-import ch.fdehedin.test.abstractfactory.AbstractFactory;
-import ch.fdehedin.test.abstractfactory.FactoryProducer;
-import ch.fdehedin.test.abstractfactory.Shape;
+import ch.fdehedin.test.patterns.abstractfactory.AbstractFactory;
+import ch.fdehedin.test.patterns.abstractfactory.FactoryProducer;
+import ch.fdehedin.test.patterns.abstractfactory.Shape;
 
 public class Demo {
 	

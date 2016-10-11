@@ -5,18 +5,13 @@
 		<layout class="ch.qos.logback.classic.PatternLayout">
 
 			<Pattern>
-				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -
-				%msg%n
+				%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} -  %msg%n
 			</Pattern>
 
 		</layout>
 	</appender>
 
-	<logger name="org.springframework" level="debug" additivity="false">
-		<appender-ref ref="STDOUT" />
-	</logger>
-
-	<logger name="ch.fdehedin.test.spring" level="debug" additivity="false">
+	<logger name="ch.fdehedin" level="debug" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
 

@@ -11,11 +11,7 @@
 		</layout>
 	</appender>
 
-	<logger name="org.springframework" level="error" additivity="false">
-		<appender-ref ref="STDOUT" />
-	</logger>
-
-	<logger name="ch.fdehedin.test.spring.di.services" level="error" additivity="false">
+	<logger name="ch.fdehedin" level="info" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
 

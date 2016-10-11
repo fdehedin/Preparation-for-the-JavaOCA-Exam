@@ -2,6 +2,8 @@ package ch.fdehedin.oca.OperatorsAndStatements;
 
 import java.util.logging.Logger;
 
+import ch.fdehedin.oca.Util;
+
 /**
  * @author fdehedin
  *
@@ -23,17 +25,9 @@ public class NumericPromoter {
 		short y = 222;
 
 		log.info(String.format("adding a int and a long will result in the larger type of the two: %s, type: %s", x + y,
-				this.getType(x + y)));
+				Util.getType(x + y)));
 	}
 
-	/**
-	 * Gets the type of a given object. Primitive types will be autoboxed..
-	 * 
-	 * @param o
-	 * @return type name of the given object
-	 */
-	private String getType(Object o) {
-		return o.getClass().getName();
-	}
+
 
 }

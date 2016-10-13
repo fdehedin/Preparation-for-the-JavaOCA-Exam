@@ -2,7 +2,13 @@ package ch.fdehedin.oca.OperatorsAndStatements;
 
 import java.util.logging.Logger;
 
-import ch.fdehedin.oca.Util;
+import org.junit.Test;
+
+import static ch.fdehedin.util.HamcrestLoggerMatcher.log;
+import static org.hamcrest.MatcherAssert.*;
+import static org.hamcrest.Matchers.*;
+
+import ch.fdehedin.util.Util;
 
 /**
  * @author fdehedin
@@ -37,11 +43,16 @@ public class Operator {
 
 	}
 
+	@Test
 	public void compountOperate() {
 		int x = 2, z = 3;
 		x *= z; // same like x = x * z, but just more handy..
+		int result1 = x;
+		x = 2;
+		x = x * z;
+		int result2 = x;
 
-		log.info(String.format("x=%s", x));
+		assertThat("checking x=x*z and also x*=z, which should both result in 6", result1, log(equalTo(result2)));
 
 		long n = 10;
 		int y = 5;
@@ -49,26 +60,35 @@ public class Operator {
 		y *= n; // this works..
 
 		log.info(String.format("y is first casted to long for the calculation, then back to: %s", Util.getType(y)));
+		assertThat(Util.getType(y), log(equalTo(Integer.class.getName())));
 
+		
 		long o = 5;
 		long s = (o = 7); // this also returns 7... so s is also 7;
 		log.info(String.format("o is %s", o));
 		log.info(String.format("s is %s", s));
 
+		assertThat(s, log(equalTo(7L)));
+
+		
 	}
 
+	@Test
 	public void logicalOperate() {
 		boolean x = true;
 		boolean z = false;
-
+		
 		// both have to be true
 		log.info(String.format("x & z = %s", x & z));
-
+		assertThat(x & z, log(is(false)));
+		
 		// one of both has to be true
 		log.info(String.format("x | z = %s", x | z));
-
+		assertThat(x | z, log(is(true)));
+		
+		
 		// both have to be different
 		log.info(String.format("x ^ z = %s", x ^ z));
-
+		assertThat(x ^ z, log(is(true)));
 	}
 }

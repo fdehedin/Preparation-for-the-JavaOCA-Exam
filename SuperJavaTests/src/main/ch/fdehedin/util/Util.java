@@ -1,4 +1,4 @@
-package ch.fdehedin.oca;
+package ch.fdehedin.util;
 
 public class Util {
 	/**

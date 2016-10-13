@@ -2,7 +2,7 @@ package ch.fdehedin.oca.OperatorsAndStatements;
 
 import java.util.logging.Logger;
 
-import ch.fdehedin.oca.Util;
+import ch.fdehedin.util.Util;
 
 /**
  * @author fdehedin

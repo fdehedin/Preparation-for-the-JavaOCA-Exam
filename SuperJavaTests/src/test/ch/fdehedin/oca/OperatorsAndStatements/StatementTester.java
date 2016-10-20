@@ -38,10 +38,46 @@ public class StatementTester {
 		if (true)
 			i = 2;
 		else
-		i = 3;i=4;
+			i = 3;
+		i = 4;
 
 		log.info(String.format("i is now: %s", i));
+
+	}
+
+	@Test
+	public void testingAndOrCombination() {
+
+		boolean a = true, b = false, c = true;
+		String result = "";
+		if (a && b || c) {
+			result = "yepp";
+		}
+
+		assertThat(result, equalTo("yepp"));
+
+		a = false;
+		b = false;
+		c = true;
+		result = "";
+		if (a && b || c) {
+			result = "yepp";
+		}
+
+		assertThat(result, equalTo("yepp"));
 		
+		a = true;
+		b = false;
+		c = false;
+		result = "";
+		if (a && b || c) {
+			result = "yepp";
+		}
+
+	
+		
+		
+		assertThat(result, equalTo(""));
 	}
 
 }

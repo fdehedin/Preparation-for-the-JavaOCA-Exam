@@ -29,7 +29,7 @@ public class TernaryOperator {
 	@Test
 	public void checkWithTernaryDifferentType() {
 		int y = 10;
-		String animal =""+ ((y < 20) ? 9 : "cat");
+		String animal = "" + ((y < 20) ? 9 : "cat");
 
 		assertThat(animal, log(equalTo("9")));
 	}

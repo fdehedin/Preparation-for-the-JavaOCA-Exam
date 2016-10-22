@@ -40,10 +40,23 @@ public class StringBuilderTester {
 			hashCodeRemember = alpha.hashCode();
 			log.info("hashcode of alpha stringbuilder:" + hashCodeRemember);
 
-			//alpha will remain the same object!
+			// alpha will remain the same object!
 			alpha.append(current);
 
 			assertThat(alpha.hashCode(), is(hashCodeRemember));
 		}
+	}
+
+	@Test
+	public void multipleReferences() {
+		StringBuilder a = new StringBuilder("abc");
+		StringBuilder b = a.append("de");
+		b.append("f");
+		b = b.append("g").append('-').append(true);
+	
+
+		assertThat(a.toString(), equalTo("abcdefg-true"));
+		assertThat(b.toString(), equalTo("abcdefg-true"));
+		assertThat(a.hashCode(), is(b.hashCode()));
 	}
 }

@@ -95,7 +95,7 @@ public class ArrayTester {
 		Arrays.sort(numbers);
 
 		int result;
-
+ 
 		result = Arrays.binarySearch(numbers, 2);
 		assertThat(result, is(1));
 

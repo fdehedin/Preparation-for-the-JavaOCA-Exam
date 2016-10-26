@@ -9,11 +9,13 @@ Desktop.ini
 #**/.settings
 **/target
 
-**/gradle/wrapper
+**/gradle/wrapper/
+**/gradle/*
 
-**/build
+**/build/*
 
 **/.classpath
 
 **/gradlew
 **/gradlew.bat
+

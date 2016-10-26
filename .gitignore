@@ -7,7 +7,7 @@ Thumbs.db
 Desktop.ini
 
 #**/.settings
-#**/.settings/
+**/.settings
 **/target
 
 **/gradle/wrapper/

@@ -9,6 +9,7 @@ Desktop.ini
 #**/.settings
 **/.settings
 **/target
+*/.project
 
 **/gradle/wrapper/
 **/gradle/*

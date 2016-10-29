@@ -54,6 +54,11 @@ public class LocalDateTimeTester {
 
 		// LocalDate dt = new LocalDate();// LocalDate functions are all static
 
+		//chaining
+		dateTime1 = dateTime1.plusHours(3).plusMonths(2);
+		assertThat(dateTime1.getHour(), is(15));
+		assertThat(dateTime1.getMonth(), is(Month.AUGUST));
+		
 		exception.expect(DateTimeException.class);
 		LocalDate.of(2020, 20, 20);
 	}

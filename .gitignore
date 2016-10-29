@@ -18,6 +18,7 @@ build/*
 
 .classpath
  
+.gradle/*
 /gradlew
 /gradlew.bat
 

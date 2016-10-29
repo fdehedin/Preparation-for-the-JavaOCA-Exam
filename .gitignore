@@ -7,18 +7,18 @@ Thumbs.db
 Desktop.ini
 
 #**/.settings
-**/.settings
-**/target
-*/.project
+/.settings
+/target
+.project
 
-**/gradle/wrapper/
-**/gradle/*
+/gradle/wrapper/
+/gradle/*
 
-**/build/*
+build/*
 
-**/.classpath
+.classpath
  
-**/gradlew
-**/gradlew.bat
+/gradlew
+/gradlew.bat
 
 /bin/

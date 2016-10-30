@@ -61,6 +61,9 @@ public class LocalDateTimeTester {
 		
 		exception.expect(DateTimeException.class);
 		LocalDate.of(2020, 20, 20);
+		
+		LocalDate dt = LocalDate.now();
+		//dt.plusMinutes(1)//does not compile.. because its LocalDate, not LocalTime nor LocalDateTime
 	}
 
 	@Test

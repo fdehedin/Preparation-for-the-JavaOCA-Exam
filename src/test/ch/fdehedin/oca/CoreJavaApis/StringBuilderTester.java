@@ -51,6 +51,13 @@ public class StringBuilderTester {
 	}
 
 	@Test
+	public void testSubstring(){
+		StringBuilder sb = new StringBuilder("abcdefg");
+		exception.expect(StringIndexOutOfBoundsException.class);
+		sb.substring(5, 4);
+	}
+	
+	@Test
 	public void multipleReferences() {
 		StringBuilder a = new StringBuilder("abc");
 		StringBuilder b = a.append("de");

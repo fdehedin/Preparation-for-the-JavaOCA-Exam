@@ -95,6 +95,14 @@ public class StringMethodTester {
 		result = batman.substring(0, batman.indexOf("m"));
 		assertThat(result, equalTo("bat"));
 
+		String numbers = "012345678";
+		//remember: the end is always counted from 0, and right before the 3. char..
+		assertThat(numbers.substring(1, 3), equalTo("12"));
+		//same same is blank..
+		assertThat(numbers.substring(7, 7), equalTo(""));
+		//FROM AND WITH char 7.. 
+		assertThat(numbers.substring(7), equalTo("78"));
+		
 		// -1
 		exception.expect(StringIndexOutOfBoundsException.class);
 		batman.substring(batman.indexOf("test"));

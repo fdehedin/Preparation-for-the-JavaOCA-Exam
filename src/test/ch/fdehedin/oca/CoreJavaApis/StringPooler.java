@@ -32,5 +32,17 @@ public class StringPooler {
 		// new object in the String pool!
 		assertThat(b.hashCode(), not(equalTo(hcode)));
 
+		String c = "Hello";
+		String d = "Hello";
+		String e = new String("Hello");
+
+		// is true, because it is the same literal!
+		assertThat(c == d, is(true));
+		assertThat(c == "Hello", is(true));
+
+		// is false, because we tell java to create a completly new String
+		// object in the String pool
+		assertThat(c == e, is(false));
+
 	}
 }

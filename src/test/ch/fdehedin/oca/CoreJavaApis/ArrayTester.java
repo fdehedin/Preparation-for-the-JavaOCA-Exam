@@ -42,7 +42,7 @@ public class ArrayTester {
 	public void arrayInstantiator() {
 		// all of those work even when there is space between brackets and type
 		// definition..
-		int[] arr1;
+		int[] arr1[] = new int[2][];
 		int arr3[];
 
 		int[] arr4, arr5; // 2 arrays of int..
@@ -60,6 +60,14 @@ public class ArrayTester {
 		String birds[] = new String[6];
 		assertThat(birds.length, is(6)); // 6, even though 6x null..
 
+		// doesn't compile, if it is compiled like this, we need to provide the
+		// size of the first dimension
+		// String java[][] = new String[][];
+
+		// declarations with size must be in the creation, right hand side..
+		// String java[2][] = new String[3][];
+
+		String[] java[] = new String[2][]; // works...
 	}
 
 	@Test
@@ -95,7 +103,7 @@ public class ArrayTester {
 		Arrays.sort(numbers);
 
 		int result;
- 
+
 		result = Arrays.binarySearch(numbers, 2);
 		assertThat(result, is(1));
 
@@ -103,6 +111,15 @@ public class ArrayTester {
 		assertThat(result, is(-4));// 1, 2, 3, 44444, 5 = -4 --> like before pos
 									// 5!!
 
+		int numbersSort[] = { 2, 4, 6, 8 };
+		result = Arrays.binarySearch(numbersSort, 4);
+		assertThat(result, is(1));
+	
+		result = Arrays.binarySearch(numbersSort, 1);
+		assertThat(result, is(-1));
+		
+		result = Arrays.binarySearch(numbersSort, 3);
+		assertThat(result, is(-2));
 	}
 
 	@Test
@@ -113,8 +130,21 @@ public class ArrayTester {
 
 	}
 
+	
 	private void testVarArgsSingle(String... args) {
 		assertThat(args, arrayWithSize(isOneOf(1, 4)));
+	}
+ 
+	@Test
+	public void compareArrays() {
+		int[] arr1 = { 1, 2, 3 };
+		int[] arr2 = { 1, 2, 3 };
+
+		// not the same object.
+		assertThat(arr1 == arr2, is(false));
+		// not the same object.
+		assertThat(arr1.equals(arr2), is(false));
+
 	}
 
 }

@@ -56,7 +56,7 @@ public class PeriodTester {
 							// again: immutable! like Strings..
 
 		MatcherAssert.assertThat(period.getMonths(), Matchers.is(periodRemember.getMonths()));
-
+		// period = Period.of(years, months, days)
 		period = period.ofMonths(10);
 		period = period.ofDays(2);
 
@@ -81,10 +81,19 @@ public class PeriodTester {
 		LocalDateTime dateTime2 = LocalDateTime.now();
 		dateTime2 = dateTime2.plus(period);
 
+
+		LocalDate dt = LocalDate.of(1977,  6,  28);
+		//remember, we can't chain period.. so this will be only months...
+		Period period1 = Period.ofDays(2).ofMonths(2);
+		dt = dt.plus(period1);
+		MatcherAssert.assertThat(dt.getDayOfMonth(), Matchers.is(28));
+		MatcherAssert.assertThat(dt.getMonth().getValue(), Matchers.is(8));
+		
 		// doesn't work..
 		LocalTime time = LocalTime.now();
 		exception.expect(UnsupportedTemporalTypeException.class);
 		time.plus(period);
+		
 	}
 
 	@Test
@@ -132,17 +141,17 @@ public class PeriodTester {
 		LocalDate dt = LocalDate.parse("28.06.1977", formatter);
 		MatcherAssert.assertThat(dt.toString(), Matchers.equalTo("1977-06-28"));
 
-		//can do also without datetime pattern
+		// can do also without datetime pattern
 		dt = LocalDate.parse("1977-06-28");
-		
-		LocalTime time = LocalTime.parse("11:22");
-		
-		//doesn't work! Exception is thrown..
-		//LocalDateTime dateTime = LocalDateTime.parse("1977-06-28");
 
-		//this works:
+		LocalTime time = LocalTime.parse("11:22");
+
+		// doesn't work! Exception is thrown..
+		// LocalDateTime dateTime = LocalDateTime.parse("1977-06-28");
+
+		// this works:
 		LocalDateTime dateTime = LocalDateTime.parse("1977-06-28T11:22");
-		
+
 	}
 
 }

@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.junit.Rule;
@@ -34,6 +35,32 @@ public class ArrayListChecker {
 		ArrayList<String> list4 = new ArrayList<String>();
 		ArrayList<String> list5 = new ArrayList<>();
 
+	}
+
+	@Test
+	public void listComparer() {
+		List<String> lst1 = new ArrayList<String>();
+		List<String> lst2 = new ArrayList<>();
+
+		lst1.add("abc");
+		lst2.add("abc");
+
+		// is FALSE! just remember.. not the same object..
+		assertThat(lst1 == lst2, is(false));
+
+		// every list item is compared..
+		assertThat(lst1.equals(lst2), is(true));
+
+		List<Integer> lst3 = new ArrayList<Integer>();
+		List<Integer> lst4 = new ArrayList<>();
+		lst3.add(1);
+		lst4.add(1);
+
+		// is FALSE! just remember.. not the same object..
+		assertThat(lst3 == lst4, is(false));
+
+		// every list item is compared..
+		assertThat(lst3.equals(lst4), is(true));
 	}
 
 	@Test

@@ -125,4 +125,12 @@ public class MethodTests {
 
 	}
 
+	protected void someMethod() {
+
+	}
+
+	protected static void someStaticMethod() {
+
+	}
+
 }

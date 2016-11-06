@@ -1,5 +1,6 @@
 package ch.fdehedin.util;
 
+import java.util.Collection;
 import java.util.List;
 
 import org.hamcrest.Description;
@@ -26,4 +27,8 @@ public class TestUtil {
 		};
 	}
 
+	public static <T> org.hamcrest.Matcher<java.lang.Iterable<? extends T>> containsInOrder(Collection<T> items) {
+		return org.hamcrest.collection.IsIterableContainingInOrder.<T>contains((T[]) items.toArray());
+	}
+	
 }

@@ -8,10 +8,15 @@ import static org.hamcrest.Matchers.*;
 
 public class MethodParamTester {
 
+	MethodParamTester(){
+		
+	}
+	
 	private static final Logger log = Logger.getLogger(MethodParamTester.class.getSimpleName());
 
 	@Test
 	public void simplePrimitivePasser() {
+	
 		int number = 10;
 		this.setNumber(number);
 		assertThat(number, is(10));
@@ -33,6 +38,15 @@ public class MethodParamTester {
 		assertThat(name, is("Anna"));/// name didn't change at all!
 	}
 
+	
+	static void test(boolean...bs){
+		
+	}
+	
+	 static final public void test2(Object param){
+		test(new boolean[2]);
+	}
+	
 	private void changeThatString(String name) {
 		name = "Berta";
 	}

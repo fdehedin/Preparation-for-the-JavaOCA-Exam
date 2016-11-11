@@ -15,15 +15,39 @@ public class LoopStatementerAdvanced {
 
 	private static final Logger log = Logger.getLogger(LoopStatementerAdvanced.class.getSimpleName());
 
+	// works:
+	long a = 12321321300L;
+
+	// the following doesn't work, since the literal is actually an "int" and is
+	// converted to
+	// long.. and the literal is too big for int.. put an L at the end of the
+	// literal to tell java that this is explizitly a long primitive type
+	// long b = 12321321300;
+
+	@Test
+	public void testBreak() {
+		outer: for (long i = 1; i < 5; i++) {
+			switch ((int) i) {
+			case 1:
+				log.info("1");
+				break;
+			default:
+				log.info("Standard");
+			case 2:
+				log.info("2");
+				// break outer;
+			}
+		}
+	}
+
 	@Test
 	public void nestedLoop() {
 
-		//weird, but works..
-		int n=9;
-		while(n++ < 10){}
-	
-		
-		
+		// weird, but works..
+		int n = 9;
+		while (n++ < 10) {
+		}
+
 		int x = 20;
 		String result = "";
 		while (x > 0) {

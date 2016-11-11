@@ -12,7 +12,7 @@ public class ConstructorParamParent {
 	public ConstructorParamParent(int i) {
 		this.i = i;
 	}
-
+ 
 	public int getIntFromParent() {
 		return i;
 	}

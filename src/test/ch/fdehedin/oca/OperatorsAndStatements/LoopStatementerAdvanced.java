@@ -27,6 +27,7 @@ public class LoopStatementerAdvanced {
 	@Test
 	public void testBreak() {
 		outer: for (long i = 1; i < 5; i++) {
+			log.info("this is i: " + i);
 			switch ((int) i) {
 			case 1:
 				log.info("1");
@@ -35,7 +36,9 @@ public class LoopStatementerAdvanced {
 				log.info("Standard");
 			case 2:
 				log.info("2");
-				// break outer;
+				//break outer;
+				continue outer;
+
 			}
 		}
 	}

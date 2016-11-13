@@ -15,7 +15,11 @@ public class InterfaceTestImpl implements InterfaceTest, InterfaceTest2, Interfa
 	}
 
 	public static void main(String[] args) {
+		// static methods with same name are bound to the interface, not to the
+		// object that is implementing them..
 		InterfaceTest.staticMethod();
+		InterfaceTest2.staticMethod();
+		InterfaceTest3.staticMethod();
 
 		InterfaceTestImpl impl = new InterfaceTestImpl();
 		// calling interface method..

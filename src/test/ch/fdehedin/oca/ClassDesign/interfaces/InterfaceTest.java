@@ -4,8 +4,10 @@ package ch.fdehedin.oca.ClassDesign.interfaces;
 public abstract interface InterfaceTest {
 
 	//same with "abstract" here..
-	public abstract void method();
+	 public abstract void method();
 	
+	
+	 
 	//doesn't compile.. 
 	//protected void protectedMethod();
 	//private void privateMethod();

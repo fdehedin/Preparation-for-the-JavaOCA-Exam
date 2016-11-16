@@ -26,7 +26,7 @@ public class GreetingLamdbaTester {
 		namesToGreet.add("Humbert");
 
 		Greeter ordinalGreeter = (String a) -> log.info("hoi " + a);
-		Greeter formalGreeter = a -> log.info("grüezi " + a);
+		Greeter formalGreeter = a -> log.info("grï¿½ezi " + a);
 
 		for (String name : namesToGreet)
 			ordinalGreeter.greet(name);
@@ -36,6 +36,8 @@ public class GreetingLamdbaTester {
 
 	}
 
+	
+	
 	/**
 	 * interface for the lamdba function
 	 *

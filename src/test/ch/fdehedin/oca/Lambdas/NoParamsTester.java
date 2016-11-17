@@ -30,6 +30,9 @@ public class NoParamsTester {
 		printer.printSometing();
 		printer2.printSometing();
 
+		//another one:
+		Runnable runner = ()->System.out.println("TEST");
+		
 	}
 
 	/**
@@ -39,4 +42,6 @@ public class NoParamsTester {
 	private interface Printer {
 		public void printSometing();
 	}
+	
+	
 }

@@ -18,36 +18,43 @@ public class ExceptionTesterInheritance {
 	public final ExpectedException exception = ExpectedException.none();
 
 	public void test() {
-		try{
+		try {
 			eatCarrot();
-		}catch(CustomException e){
-			
+		} catch (CustomRuntimeException e) {
+
 		}
+	}
+
+	public void ohNo() throws Throwable {
+		// doesn't compile.. must be handled!
+			throw new Exception("");
+		
 	}
 
 	public void eatCarrot() {
 
 	}
-	
-	public void good() throws CustomRuntimeException{
-		
+
+	public void good() throws CustomRuntimeException {
+
 	}
 
-	abstract class Hopper{
+	abstract class Hopper {
 		public abstract void hop();
 	}
-	
-	class Bunny extends Hopper{
+
+	class Bunny extends Hopper {
 
 		@Override
-		public void hop() throws CustomRuntimeException{
-			
+		public void hop() throws CustomRuntimeException {
+
 		}
-	
+
 	}
-	
+
 	class CustomException extends Exception {
 	}
+
 	class CustomRuntimeException extends RuntimeException {
 	}
 

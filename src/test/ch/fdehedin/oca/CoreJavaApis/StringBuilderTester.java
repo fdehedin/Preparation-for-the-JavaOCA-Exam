@@ -51,12 +51,12 @@ public class StringBuilderTester {
 	}
 
 	@Test
-	public void testSubstring(){
+	public void testSubstring() {
 		StringBuilder sb = new StringBuilder("abcdefg");
 		exception.expect(StringIndexOutOfBoundsException.class);
 		sb.substring(5, 4);
 	}
-	
+
 	@Test
 	public void multipleReferences() {
 		StringBuilder a = new StringBuilder("abc");
@@ -113,13 +113,23 @@ public class StringBuilderTester {
 		assertThat(a.toString(), equalTo("acdefg"));
 
 	}
+
 	@Test
 	public void testReverse() {
 		StringBuilder a = new StringBuilder("abcdefg");
 		a.reverse();
 
 		assertThat(a.toString(), equalTo("gfedcba"));
+	}
+ 
+	@Test
+	public void testSetLength() {
+		StringBuilder sb = new StringBuilder("abcdefg");
 
+		// sets the length of the StringBuilder and cuts everything else off..
+		// note: lengtsh is amount of chars! and not index starting from 0!!
+		sb.setLength(2);
+		assertThat(sb.toString(), equalTo("ab"));
 
 	}
 }

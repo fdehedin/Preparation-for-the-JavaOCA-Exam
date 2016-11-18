@@ -125,7 +125,7 @@ public class StringBuilderTester {
 	@Test
 	public void testSetLength() {
 		StringBuilder sb = new StringBuilder("abcdefg");
-
+ 
 		// sets the length of the StringBuilder and cuts everything else off..
 		// note: lengtsh is amount of chars! and not index starting from 0!!
 		sb.setLength(2);

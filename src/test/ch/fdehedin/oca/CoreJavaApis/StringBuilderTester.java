@@ -58,6 +58,30 @@ public class StringBuilderTester {
 	}
 	
 	@Test
+	public void testSubstring2(){
+		StringBuilder sb = new StringBuilder("abc");
+		sb.substring(1);
+		//that does actually not change the StringBuilders value!
+		assertThat(sb.toString(), equalTo("abc"));
+		
+		String s = sb.substring(1);
+		//we need to first set a String object!
+		assertThat(s, equalTo("bc"));
+		
+		String s2 = sb.substring(1, 2);
+		//the rest i the same like substring on String!
+		assertThat(s2, equalTo("b"));
+		
+		String s3 = sb.substring(1, 1);
+		//the rest i the same like substring on String!
+		assertThat(s3, equalTo(""));
+		
+		String s4 = sb.substring(1, 0);
+		//the rest i the same like substring on String!
+		assertThat(s4, equalTo(""));
+	}
+	
+	@Test
 	public void multipleReferences() {
 		StringBuilder a = new StringBuilder("abc");
 		StringBuilder b = a.append("de");

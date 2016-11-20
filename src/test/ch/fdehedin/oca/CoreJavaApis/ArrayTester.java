@@ -26,6 +26,30 @@ public class ArrayTester {
 	@Rule
 	public final ExpectedException exception = ExpectedException.none();
 
+	int[] arr1[];// 2 dimension
+	int[][] arr2;
+
+	@Test
+	public void initTests() {
+		int[] arr1[] = null;// 2 dimension
+		int[][] arr2 = null;
+		int[] arr3 = null;
+
+		assertThat(arr1 == arr2, is(true));
+
+		// DOES NOT COMPILE (cannot compare 2dim and 1 dim array...
+		// assertThat(arr1==arr3, is(true));
+
+		int[] arr4 = new int[] { 1, 2, 3 };
+		int[] arr5 = new int[] { 1, 2, 3 };
+
+		int[] arr6[] = new int[2][];
+		int[] arr7 = { 1, 2, 3 };
+		
+		exception.expect(NegativeArraySizeException.class);
+		int[] arr8[] = new int[-12][];
+	}
+
 	@Test
 	public void basicTests() {
 		int[] numbers = new int[3]; // 3 elements
@@ -114,10 +138,10 @@ public class ArrayTester {
 		int numbersSort[] = { 2, 4, 6, 8 };
 		result = Arrays.binarySearch(numbersSort, 4);
 		assertThat(result, is(1));
-	
+
 		result = Arrays.binarySearch(numbersSort, 1);
 		assertThat(result, is(-1));
-		
+
 		result = Arrays.binarySearch(numbersSort, 3);
 		assertThat(result, is(-2));
 	}
@@ -130,11 +154,10 @@ public class ArrayTester {
 
 	}
 
-	
 	private void testVarArgsSingle(String... args) {
 		assertThat(args, arrayWithSize(isOneOf(1, 4)));
 	}
- 
+
 	@Test
 	public void compareArrays() {
 		int[] arr1 = { 1, 2, 3 };
@@ -147,4 +170,6 @@ public class ArrayTester {
 
 	}
 
+
+	
 }

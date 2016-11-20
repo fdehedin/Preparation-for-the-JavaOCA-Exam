@@ -17,7 +17,9 @@ public class Testing {
 		AbstractClass a = new SubClassFromAbstract();
 		a.writeInstanceMethod();
 		a.writeStaticMethod();
-
+		
+		System.out.println("s: "+a.s);
+		
 	}
 
 	@Test

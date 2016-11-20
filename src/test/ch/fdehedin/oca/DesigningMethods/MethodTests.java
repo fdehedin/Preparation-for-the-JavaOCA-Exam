@@ -21,6 +21,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
+import groovy.util.logging.Log;
+
 //@RunWith(Parameterized.class)
 public class MethodTests {
 
@@ -131,6 +133,25 @@ public class MethodTests {
 
 	protected static void someStaticMethod() {
 
+	}
+
+	@Test
+	public void testIntegerParam() {
+		// calling the "int" param method
+		this.printIntegerParam(1);
+		this.printIntegerParam(2);
+
+		// calling the "Integer" param method
+		this.printIntegerParam((Integer) 2);
+		this.printIntegerParam(new Integer(2));
+	}
+
+	private void printIntegerParam(int i) {
+		LOGGER.info("i am an int");
+	}
+
+	private void printIntegerParam(Integer i) {
+		LOGGER.info("i am an Integer");
 	}
 
 }

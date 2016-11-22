@@ -45,7 +45,7 @@ public class ArrayTester {
 
 		int[] arr6[] = new int[2][];
 		int[] arr7 = { 1, 2, 3 };
-		
+
 		exception.expect(NegativeArraySizeException.class);
 		int[] arr8[] = new int[-12][];
 	}
@@ -168,8 +168,29 @@ public class ArrayTester {
 		// not the same object.
 		assertThat(arr1.equals(arr2), is(false));
 
+		arr1[0] = arr1[1] = 0;
+
+		System.out.println("arr1[0]: " + arr1[0]);
+		System.out.println("arr1[1]: " + arr1[1]);
+
 	}
 
+	@Test
+	public void arrayLooper() {
+		int size = 10;
+		int i1 = 2;
+		size = i1 = 1;
 
-	
+		int[] arr = new int[size];
+		int i;
+		for (i = 0; i < size; ++i) {
+
+			System.out.println("i: " + i);
+
+			System.out.println(arr[i]);
+		}
+
+		System.out.println("i after loop: " + i);
+	}
+
 }

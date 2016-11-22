@@ -193,6 +193,10 @@ public class StringBuilderTester {
 
 		assertThat(a.toString(), equalTo("acdefg"));
 
+		a = new StringBuilder("1234");
+		a = a.delete(0,1);
+		assertThat(a.toString(), equalTo("234"));
+
 	}
 
 	@Test

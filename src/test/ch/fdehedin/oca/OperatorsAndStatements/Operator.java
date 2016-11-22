@@ -62,7 +62,6 @@ public class Operator {
 		log.info(String.format("y is first casted to long for the calculation, then back to: %s", Util.getType(y)));
 		assertThat(Util.getType(y), log(equalTo(Integer.class.getName())));
 
-		
 		long o = 5;
 		long s = (o = 7); // this also returns 7... so s is also 7;
 		log.info(String.format("o is %s", o));
@@ -70,25 +69,60 @@ public class Operator {
 
 		assertThat(s, log(equalTo(7L)));
 
-		
 	}
 
 	@Test
 	public void logicalOperate() {
 		boolean x = true;
 		boolean z = false;
-		
+
 		// both have to be true
 		log.info(String.format("x & z = %s", x & z));
 		assertThat(x & z, log(is(false)));
-		
+
 		// one of both has to be true
 		log.info(String.format("x | z = %s", x | z));
 		assertThat(x | z, log(is(true)));
-		
-		
+
 		// both have to be different
 		log.info(String.format("x ^ z = %s", x ^ z));
 		assertThat(x ^ z, log(is(true)));
+
+	}
+
+	@Test
+	public void testInstanceOf() {
+		int a = 1;
+		int[] abc = { 0, 1, 2, 3 };
+		Double b = new Double(1.0);
+		Double c = new Double(a);
+
+		// CANNOT! int is a primitive, thus not an object!
+		// assertThat(a instanceof Object, log(is(true)));
+
+		// Arrays of primitives ARE Object..
+		assertThat(abc instanceof Object, log(is(true)));
+		assertThat(b instanceof Object, log(is(true)));
+		assertThat(c instanceof Object, log(is(true)));
+		assertThat("STRING OBJECT" instanceof Object, log(is(true)));
+
+		// this is octal! so it will be 43
+		assertThat(053, log(is(43)));
+
+		assertThat(01, log(is(1)));
+		assertThat(010, log(is(8)));
+		assertThat(020, log(is(16)));
+
+		int _ = 1;
+		assertThat(_, log(is(1)));
+
+		String Double = "", String = "", Object = "", Arrays = "", Integer = "";
+		assertThat(Double, log(is("")));
+		assertThat(String, log(is("")));
+
+	}
+	
+	void print(){
+		
 	}
 }

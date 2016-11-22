@@ -10,6 +10,13 @@ public class ClassVariables {
 
 	private static final Logger logger = LoggerFactory.getLogger(ClassVariables.class);
 
+	static int si = 10;
+	int integerO;
+	final boolean boolll;
+	{
+		boolll = true;
+	}
+
 	static String name; // null
 	static boolean b;// false
 	static byte b1;// 0

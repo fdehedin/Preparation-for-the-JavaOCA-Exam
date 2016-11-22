@@ -1,6 +1,6 @@
 package ch.fdehedin.oca.ClassDesign;
 
-public class A {
+abstract public class A {
 	int i;
 
 	public A(int x) {
@@ -17,5 +17,5 @@ class B extends A {
 	public B(int x, int y) {
 		super(x);
 		this.j = y;
-	}
+	};
 }

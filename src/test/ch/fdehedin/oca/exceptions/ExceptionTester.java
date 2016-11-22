@@ -15,6 +15,8 @@ public class ExceptionTester {
 			fall();
 		} catch (RuntimeException e) {
 			log.log(Level.SEVERE, "", e);
+		} catch (Exception e) {
+			log.log(Level.SEVERE, "", e);
 		} finally {
 			log.info("no we're in finally..");
 		}
@@ -28,6 +30,7 @@ public class ExceptionTester {
 			log.log(Level.SEVERE, "some other exception", e);
 		} finally {
 			log.info("no we're in finally..");
+			fallRunTime();
 		}
 
 		// and not the other way round:
@@ -41,20 +44,21 @@ public class ExceptionTester {
 		} finally {
 			log.info("no we're in finally..");
 		}
-		
-		
+
 	}
 
 	@Test
-	public static void fall() throws Error {
-		try{
-			log.info("zero div:"+0/0);
-		}catch(NullPointerException e){
-			log.info("catch:"+e);
-		}finally{
+	public static void fall() throws Exception {
+		try {
+			log.info("zero div:" + 0 / 0);
+		} catch (NullPointerException e) {
+			log.info("catch:" + e);
+		} finally {
 			log.info("finally");
 		}
 		log.info("finally");
-	} 
+	}
 
+	public static void fallRunTime() throws RuntimeException {
+	}
 }

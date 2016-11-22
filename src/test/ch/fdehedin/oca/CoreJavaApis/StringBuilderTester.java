@@ -51,55 +51,53 @@ public class StringBuilderTester {
 	}
 
 	@Test
-	public void testSubstring(){
+	public void testSubstring() {
 		StringBuilder sb = new StringBuilder("abcdefg");
 		exception.expect(StringIndexOutOfBoundsException.class);
 		sb.substring(5, 4);
 	}
-	
+
 	@Test
-	public void testSubstring2(){
+	public void testSubstring2() {
 		StringBuilder sb = new StringBuilder("abc");
 		sb.substring(1);
-		//that does actually not change the StringBuilders value!
+		// that does actually not change the StringBuilders value!
 		assertThat(sb.toString(), equalTo("abc"));
-	
-		
+
 		String s = sb.substring(1);
-		//we need to first set a String object!
+		// we need to first set a String object!
 		assertThat(s, equalTo("bc"));
-		
+
 		String s2 = sb.substring(1, 2);
-		//the rest i the same like substring on String!
+		// the rest i the same like substring on String!
 		assertThat(s2, equalTo("b"));
-		
-		System.out.println("sb"+sb);
-		
+
+		System.out.println("sb" + sb);
+
 		String s3 = sb.substring(1, 1);
-		//the rest i the same like substring on String!
+		// the rest i the same like substring on String!
 		assertThat(s3, equalTo(""));
-		System.out.println("sb after substring"+sb);		
-		//this WILL CAN EXCEPTion
-		//String s4 = sb.substring(1, 0);
-		//the rest i the same like substring on String!
-		//assertThat(s4, equalTo(""));
-		
+		System.out.println("sb after substring" + sb);
+		// this WILL CAN EXCEPTion
+		// String s4 = sb.substring(1, 0);
+		// the rest i the same like substring on String!
+		// assertThat(s4, equalTo(""));
+
 		StringBuilder sb2 = new StringBuilder("abcdefg");
 		sb2.replace(0, 5, "NEW");
 		assertThat(sb2.toString(), equalTo("NEWfg"));
-		
+
 		String str = new String("abcdefg");
-		str.replace("abc","zzz");
-		//remember, Strings are not mutable, so this will remain the same!
+		str.replace("abc", "zzz");
+		// remember, Strings are not mutable, so this will remain the same!
 		assertThat(str, equalTo("abcdefg"));
-		
-		//we need to set it again!
-		str = str.replace("abc","zzz");
+
+		// we need to set it again!
+		str = str.replace("abc", "zzz");
 		assertThat(str, equalTo("zzzdefg"));
-		
-		
+
 	}
-	
+
 	@Test
 	public void multipleReferences() {
 		StringBuilder a = new StringBuilder("abc");
@@ -136,8 +134,6 @@ public class StringBuilderTester {
 		a.insert(7, "-");
 		assertThat(a.toString(), equalTo("012345-"));
 
-		
-		
 	}
 
 	@Test
@@ -158,6 +154,7 @@ public class StringBuilderTester {
 		assertThat(a.toString(), equalTo("acdefg"));
 
 	}
+
 	@Test
 	public void testReverse() {
 		StringBuilder a = new StringBuilder("abcdefg");
@@ -168,15 +165,49 @@ public class StringBuilderTester {
 	}
 
 	@Test
-	public void testCharAt(){
+	public void testCharAt() {
 		StringBuilder sb = new StringBuilder("abcdefg");
 		char a = sb.charAt(1);
-		
+
 		assertThat(a, equalTo('b'));
-		
+
 		String s = new String("abcdefg");
 		char b = s.charAt(0);
 		assertThat(b, equalTo('a'));
+	}
+
+	@Test
+	public void testDelete2() {
+		StringBuilder a = new StringBuilder("abcdefg");
+		a.delete(2, 3);
+
+		assertThat(a.toString(), equalTo("abdefg"));
+
+		a = new StringBuilder("abcdefg");
+		a.delete(2, 4);
+
+		assertThat(a.toString(), equalTo("abefg"));
+
+		a = new StringBuilder("abcdefg");
+		a.deleteCharAt(1);
+
+		assertThat(a.toString(), equalTo("acdefg"));
+
+		a = new StringBuilder("1234");
+		a = a.delete(0,1);
+		assertThat(a.toString(), equalTo("234"));
+
+	}
+
+	@Test
+	public void testSetLength() {
+		StringBuilder sb = new StringBuilder("abcdefg");
+
+		// sets the length of the StringBuilder and cuts everything else off..
+		// note: lengtsh is amount of chars! and not index starting from 0!!
+		sb.setLength(2);
+		assertThat(sb.toString(), equalTo("ab"));
+
 	}
 
 }

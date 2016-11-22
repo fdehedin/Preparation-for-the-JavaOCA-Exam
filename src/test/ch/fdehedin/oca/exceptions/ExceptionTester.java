@@ -15,10 +15,8 @@ public class ExceptionTester {
 			fall();
 		} catch (RuntimeException e) {
 			log.log(Level.SEVERE, "", e);
-		}
-		// catch can handle anything thats throwable..
-		catch (Throwable t) {
-			log.log(Level.SEVERE, "", t);
+		} catch (Exception e) {
+			log.log(Level.SEVERE, "", e);
 		} finally {
 			log.info("no we're in finally..");
 		}
@@ -32,6 +30,7 @@ public class ExceptionTester {
 			log.log(Level.SEVERE, "some other exception", e);
 		} finally {
 			log.info("no we're in finally..");
+			fallRunTime();
 		}
 
 		// and not the other way round:
@@ -49,7 +48,7 @@ public class ExceptionTester {
 	}
 
 	@Test
-	public static void fall() throws Error {
+	public static void fall() throws Exception {
 		try {
 			log.info("zero div:" + 0 / 0);
 		} catch (NullPointerException e) {
@@ -60,4 +59,6 @@ public class ExceptionTester {
 		log.info("finally");
 	}
 
+	public static void fallRunTime() throws RuntimeException {
+	}
 }

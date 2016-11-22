@@ -11,15 +11,25 @@ public class Testing {
 	@Rule
 	public final ExpectedException exception = ExpectedException.none();
 
+	@Test
+	public void testInheritingAbstract() {
+
+		AbstractClass a = new SubClassFromAbstract();
+		a.writeInstanceMethod();
+		a.writeStaticMethod();
+		
+		System.out.println("s: "+a.s);
+		
+	}
 
 	@Test
 	public void testVirtualMethods() {
 		SuperClass superClassObj = new SubClass(null);
 		assertThat(superClassObj.getName(), equalTo("Sub Class"));
-		
-		//this will case an exception!
+
+		// this will case an exception!
 		exception.expect(ClassCastException.class);
-		AnotherSubClass sb = (AnotherSubClass)superClassObj;
+		AnotherSubClass sb = (AnotherSubClass) superClassObj;
 	}
 
 }

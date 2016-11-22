@@ -18,37 +18,54 @@ public class ExceptionTesterInheritance {
 	public final ExpectedException exception = ExpectedException.none();
 
 	public void test() {
+<<<<<<< HEAD
 	//	try{
+=======
+		try {
+>>>>>>> branch 'master' of https://github.com/fdehedin/Preparation-for-the-JavaOCA-Exam.git
 			eatCarrot();
+<<<<<<< HEAD
 			//unreachable code!!
 	//	}catch(CustomException e){
 	//		
 	//	}
+=======
+		} catch (CustomRuntimeException e) {
+
+		}
+	}
+
+	public void ohNo() throws Throwable {
+		// doesn't compile.. must be handled!
+			throw new Exception("");
+		
+>>>>>>> branch 'master' of https://github.com/fdehedin/Preparation-for-the-JavaOCA-Exam.git
 	}
 
 	public void eatCarrot() {
 
 	}
-	
-	public void good() throws CustomRuntimeException{
-		
+
+	public void good() throws CustomRuntimeException {
+
 	}
 
-	abstract class Hopper{
+	abstract class Hopper {
 		public abstract void hop();
 	}
-	
-	class Bunny extends Hopper{
+
+	class Bunny extends Hopper {
 
 		@Override
-		public void hop() throws CustomRuntimeException{
-			
+		public void hop() throws CustomRuntimeException {
+
 		}
-	
+
 	}
-	
+
 	class CustomException extends Exception {
 	}
+
 	class CustomRuntimeException extends RuntimeException {
 	}
 

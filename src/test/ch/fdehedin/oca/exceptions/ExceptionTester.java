@@ -3,6 +3,8 @@ package ch.fdehedin.oca.exceptions;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import org.junit.Test;
+
 import ch.fdehedin.oca.Lambdas.ArrayLambdaTester;
 
 public class ExceptionTester {
@@ -39,10 +41,20 @@ public class ExceptionTester {
 		} finally {
 			log.info("no we're in finally..");
 		}
+		
+		
 	}
 
-	public static void fall() throws RuntimeException {
-		throw new RuntimeException();
-	}
+	@Test
+	public static void fall() throws Error {
+		try{
+			log.info("zero div:"+0/0);
+		}catch(NullPointerException e){
+			log.info("catch:"+e);
+		}finally{
+			log.info("finally");
+		}
+		log.info("finally");
+	} 
 
 }

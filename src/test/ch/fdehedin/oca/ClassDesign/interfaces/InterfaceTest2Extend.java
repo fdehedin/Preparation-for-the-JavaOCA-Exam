@@ -14,6 +14,8 @@ public abstract interface InterfaceTest2Extend {
 	//same like in classes: cannot override a default interface method with different return type!
 	//public default boolean doSomethingDefault() {
 	//	LOG.info("inside something default");
-	//}
-
+	//} 
+	public default void doSomethingDefault(){
+		LOG.info("inside something default");
+	}
 }

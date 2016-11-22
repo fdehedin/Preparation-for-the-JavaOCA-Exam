@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.is;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -89,7 +90,7 @@ public class ArrayListChecker {
 
 	@Test
 	public void remove() {
-		ArrayList<String> list5 = new ArrayList<>();
+		List<String> list5 = new ArrayList<>();
 
 		list5.add("Test");
 		list5.add("Test");
@@ -110,9 +111,22 @@ public class ArrayListChecker {
 		// after removning..
 		assertThat(list5.remove(0), equalTo("Test3"));
 
+		list5.add("Test");
+		assertThat(list5.remove("Test"), equalTo(true));
+
+		list5.add("Test");
+		assertThat(list5.remove("abc"), equalTo(false));
 		// remember:
 		// remove(int) returns the object after removal
 		// remove(Object) returns true after removal
+
+		List<Integer> listInts = new ArrayList<Integer>();
+		listInts.add(1);
+		listInts.add(2);
+		listInts.add(3);
+
+		// this will return the object!
+		assertThat(listInts.remove(1), equalTo(2));
 
 	}
 
@@ -191,5 +205,22 @@ public class ArrayListChecker {
 		// of course, this will result false..
 		assertThat(lst.equals(lst2), is(false));
 
+	}
+
+	@Test
+	public void convertArrayToListToArray() {
+		int[] arr1 = { 1, 2, 3 };
+		// this won't compile, since Array.asList doesn't deal with autoboxing..
+		//List<Integer> lst1 = Arrays.asList(arr1);
+		
+		
+		Integer[] arr2 = { 1, 2, 3 };
+		List<Integer> lst1 = Arrays.asList(arr2);
+		//this will throw an exception, since we have an array as "datastore"
+		//lst1.remove(0);
+		
+		List<Integer> lst2 = new ArrayList<>(Arrays.asList(arr2));
+		System.out.println(lst2.remove(3)); //true;
+		
 	}
 }

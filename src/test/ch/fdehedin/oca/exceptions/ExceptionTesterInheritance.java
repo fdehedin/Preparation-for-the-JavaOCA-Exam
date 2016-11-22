@@ -27,8 +27,8 @@ public class ExceptionTesterInheritance {
 
 	public void ohNo() throws Throwable {
 		// doesn't compile.. must be handled!
-			throw new Exception("");
-		
+		throw new Exception("");
+
 	}
 
 	public void eatCarrot() {
@@ -41,6 +41,10 @@ public class ExceptionTesterInheritance {
 
 	abstract class Hopper {
 		public abstract void hop();
+
+		public void eat() throws Exception {
+			throw new IllegalArgumentException();
+		}
 	}
 
 	class Bunny extends Hopper {
@@ -50,6 +54,10 @@ public class ExceptionTesterInheritance {
 
 		}
 
+		// an overriden class doesn't NEED to throw the same exception!
+		public void eat() {
+
+		}
 	}
 
 	class CustomException extends Exception {

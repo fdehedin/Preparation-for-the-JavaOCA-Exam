@@ -61,6 +61,13 @@ public class ArrayTester {
 		exception.expect(IndexOutOfBoundsException.class);
 		assertThat(numbers[3], is(0)); // 0, 1, 2 = 3 elements...
 	}
+	
+	@Test
+	public void negativeAccessTests() {
+		int[] numbers = new int[]{1,2,3}; // 3 elements
+		exception.expect(ArrayIndexOutOfBoundsException.class);
+		log.info("test: "+numbers[-1]);
+	}
 
 	@Test
 	public void arrayInstantiator() {

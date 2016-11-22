@@ -62,4 +62,45 @@ public class PrimitiveTester {
 		exception.expect(NumberFormatException.class);
 		i = Integer.parseInt("1.0");	
 	}
+	
+	@Test
+	public void testInteger(){
+		int a = Integer.MIN_VALUE;
+		int b = +a;
+		log.info("a: "+a +" , b: "+b);
+	}
+	
+	@Test
+	public void testCompare(){
+		int a = 1;
+		Integer b = new Integer(1);
+		assertThat(a==b, is(true));
+		assertThat(b.equals(a), is(true));
+		
+		byte c = 1;
+		assertThat(c==b, is(true));
+		assertThat(b.equals(c), is(false));
+		
+		long l  = 1L;
+		assertThat(c==l, is(true));
+		assertThat(b.equals(l), is(false));
+		
+		assertThat(1L == 1, is(true));
+		
+		assertThat(1.0F == 1, is(true));
+		
+		assertThat(1.0 == 1, is(true));
+		
+		Double dbl = 1.0;
+		assertThat(dbl.equals(1), is(false));
+		assertThat(dbl.equals(1.0F), is(false));
+		assertThat(dbl.equals(1.0), is(true));
+		
+		short s = Short.MAX_VALUE;
+		char charr = (char)s;
+		log.info("charr:"+charr);
+		
+		
+		
+	}
 }

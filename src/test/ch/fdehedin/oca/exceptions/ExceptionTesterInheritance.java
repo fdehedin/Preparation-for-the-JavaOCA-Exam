@@ -1,15 +1,11 @@
 package ch.fdehedin.oca.exceptions;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.logging.Logger;
 
 import org.junit.Rule;
-import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import ch.fdehedin.oca.Lambdas.ArrayLambdaTester;
-import ch.fdehedin.oca.exceptions.MultiExceptionTester.CustomException;
 
 public class ExceptionTesterInheritance {
 	private static final Logger log = Logger.getLogger(ArrayLambdaTester.class.getSimpleName());
@@ -18,28 +14,18 @@ public class ExceptionTesterInheritance {
 	public final ExpectedException exception = ExpectedException.none();
 
 	public void test() {
-<<<<<<< HEAD
-	//	try{
-=======
-		try {
->>>>>>> branch 'master' of https://github.com/fdehedin/Preparation-for-the-JavaOCA-Exam.git
-			eatCarrot();
-<<<<<<< HEAD
-			//unreachable code!!
-	//	}catch(CustomException e){
-	//		
-	//	}
-=======
-		} catch (CustomRuntimeException e) {
-
-		}
+		// try{
+		eatCarrot();
+		// unreachable code!!
+		// }catch(CustomException e){
+		//
+		// }
 	}
 
 	public void ohNo() throws Throwable {
 		// doesn't compile.. must be handled!
-			throw new Exception("");
-		
->>>>>>> branch 'master' of https://github.com/fdehedin/Preparation-for-the-JavaOCA-Exam.git
+		throw new Exception("");
+
 	}
 
 	public void eatCarrot() {
@@ -54,19 +40,14 @@ public class ExceptionTesterInheritance {
 		public abstract void hop();
 	}
 
-	class Bunny extends Hopper {
-
-		@Override
-		public void hop() throws CustomRuntimeException {
-
-		}
+	public void hop() throws CustomRuntimeException {
 
 	}
 
-	class CustomException extends Exception {
-	}
+}
 
-	class CustomRuntimeException extends RuntimeException {
-	}
+class CustomException extends Exception {
+}
 
+class CustomRuntimeException extends RuntimeException {
 }

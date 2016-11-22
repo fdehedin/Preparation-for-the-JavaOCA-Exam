@@ -18,11 +18,12 @@ public class ExceptionTesterInheritance {
 	public final ExpectedException exception = ExpectedException.none();
 
 	public void test() {
-		try{
+	//	try{
 			eatCarrot();
-		}catch(CustomException e){
-			
-		}
+			//unreachable code!!
+	//	}catch(CustomException e){
+	//		
+	//	}
 	}
 
 	public void eatCarrot() {

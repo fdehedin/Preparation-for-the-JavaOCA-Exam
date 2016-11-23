@@ -109,6 +109,26 @@ public class PrimitiveTester {
 		char charr = (char)s;
 		log.info("charr:"+charr);
 		
+		int min = Integer.MIN_VALUE;
+		log.info("min value:"+min);
+		int min2 = -min;
+		//log.info("min value:"+min);
+		log.info("min2 value:"+min2);
+		
+		//FALSE! because they're pointing to a different object!!
+		assertThat(new Integer(1) == new Integer(1), is(false));
+		
+		//compared with a primitive..
+		assertThat(new Integer(1) == 1, is(true));
+	
+		//TRUE: using the autoboxed Integers equals function
+		assertThat(new Integer(1).equals(new Integer(1)), is(true));
+		assertThat(new Integer(1).equals(new Integer("1")), is(true));
+		
+		//False, not the same class..
+		assertThat(new Integer(1).equals(new Long(1)), is(false));
+
+		Boolean b1234 = Boolean.valueOf(true);
 		
 		
 	}

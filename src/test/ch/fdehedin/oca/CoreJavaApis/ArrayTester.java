@@ -70,7 +70,18 @@ public class ArrayTester {
 	}
 
 	@Test
+	public void arrayLengthTest(){
+		int[] arr = new int[0];
+		assertThat(arr==null, is(false));
+		
+		String[] str = new String[0];
+		assertThat(str==null, is(false));
+	}
+	
+	@Test
 	public void arrayInstantiator() {
+	
+		
 		// all of those work even when there is space between brackets and type
 		// definition..
 		int[] arr1[] = new int[2][];

@@ -9,25 +9,33 @@ public class InstantiatorTester {
 	private static final Logger log = Logger.getLogger(ArrayLambdaTester.class.getSimpleName());
 
 	final boolean test;
-	final static boolean testStatic;
+
+	static boolean testStatic;
 
 	{
 		test = false;
-		// testStatic = true;
-		
+		testStatic = true;
+		float f2 = 123_345_667F;
+
 	}
 
 	static {
 		testStatic = false;
 		Object o = null;
 		String s = o.getClass().getName();
-		
+		init(0);
+
 	}
 
 	public static void main(String[] args) {
 		log.info("testStatic: " + testStatic);
 		log.info("test: " + new InstantiatorTester().test);
 		log.info("testStatic: " + testStatic);
+	}
+
+	public static int init(int i) {
+		log.info("i: " + i);
+		return i;
 	}
 
 }

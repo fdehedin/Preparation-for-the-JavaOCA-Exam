@@ -131,5 +131,121 @@ public class PrimitiveTester {
 		Boolean b1234 = Boolean.valueOf(true);
 		
 		
+		char charr = (char) s;
+		log.info("charr:" + charr);
+
+	}
+
+	@Test
+	public void byteCasting() {
+		// byte can be -128 to 127, 8bit
+		byte b = 10;
+		assertThat(b == 10, is(true));
+
+		short s = b;
+		assertThat(s == b, is(true));
+		assertThat(s == 10, is(true));
+
+		int i = b;
+		assertThat(i == b, is(true));
+		assertThat(i == 10, is(true));
+		assertThat(i == 10.0, is(true));
+
+		char c = (char) b;
+		log.info("c:" + c);
+		assertThat(c == b, is(true));
+
+		long l = b;
+		assertThat(l == b, is(true));
+
+		float f = b;
+		assertThat(f == b, is(true));
+
+		double d = b;
+		assertThat(d == b, is(true));
+		assertThat(d == 10, is(true));
+		assertThat(d == 10.0, is(true));
+	}
+
+	@Test
+	public void shortCasting() {
+		// short can be -32K to +32K, 16Bit
+		short s = 10;
+		assertThat(s == 10, is(true));
+
+		// this is not possible!
+		// byte b = s;
+		// We need an explizit cast!
+		byte b = (byte) s;
+		assertThat(b == 10, is(true));
+		short sBIG = 32000;
+		byte bSmall = (byte) sBIG;
+		log.info("converted 32K short into byte: " + bSmall);
+		assertThat(bSmall == 0, is(true));
+
+		int i = s;
+		assertThat(i == s, is(true));
+		assertThat(i == 10, is(true));
+		assertThat(i == 10.0, is(true));
+
+		long l = s;
+		assertThat(l == s, is(true));
+
+		float f = s;
+		assertThat(f == s, is(true));
+
+		double d = s;
+		assertThat(d == s, is(true));
+		assertThat(d == 10, is(true));
+		assertThat(d == 10.0, is(true));
+	}
+
+	@Test
+	public void intCasting() {
+		// int can be -2Mia until 2Mia , 32bit
+		int i = 10;
+		assertThat(i == 10, is(true));
+		assertThat(i == 10.0, is(true));
+
+		char c = (char) i;
+		log.info("c:" + c);
+		assertThat(c == i, is(true));
+
+		// can't, we need to cast!
+		// short s = i;
+		short s = (short) i;
+		assertThat(s == 10, is(true));
+
+		double d = i;
+		assertThat(d == 10, is(true));
+
+	}
+
+	@Test
+	public void carCasting() {
+		// '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535
+		// inclusive).
+
+		char c = 10;// line feed
+
+		// can't, we need to cast
+		// byte b = c;
+		byte b = (byte) c;
+		assertThat(b == 10, is(true));
+
+		short s = (short) c;
+		assertThat(b == 10, is(true));
+	}
+
+	@Test
+	public void charTest() {
+
+		char s = 's';
+		String es = "es";
+		String e = "e";
+		e = e + s;
+
+		System.out.println(es == e);
+
 	}
 }

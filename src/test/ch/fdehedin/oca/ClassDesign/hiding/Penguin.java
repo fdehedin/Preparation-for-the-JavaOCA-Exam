@@ -7,6 +7,18 @@ import org.junit.Test;
 
 public class Penguin extends Bird {
 
+	static String s = "s";
+	int x = 30;
+	static int y = 40;
+
+	public Penguin() {
+		s = "test";
+	}
+
+	public static void init() {
+		System.out.println(Penguin.class.toString());
+	}
+
 	public boolean isCanFly() {
 		return false;
 	}
@@ -22,5 +34,20 @@ public class Penguin extends Bird {
 	// @Override
 	public void testFly(boolean b) {
 
+	}
+
+	public Integer getNumberOfWings() {
+		return 1;
+	};
+
+	@Test
+	public void testVariables() {
+		Bird bird = new Penguin();
+		assertThat(bird.x == 10, is(true));
+		assertThat(bird.y == 20, is(true));
+
+		Penguin penguin = new Penguin();
+		assertThat(penguin.x == 30, is(true));
+		assertThat(penguin.y == 40, is(true));
 	}
 }

@@ -45,17 +45,17 @@ public class ExceptionTesterInheritance {
 	}
 
 	public void hop() throws CustomRuntimeException {
+	}
 
-		// an overriden class doesn't NEED to throw the same exception!
-		public void eat() {
+	// an overriden class doesn't NEED to throw the same exception!
+	public void eat() {
 
-		}
 	}
 
 }
 
 class CustomException extends Exception {
-}
+} 
 
 class CustomRuntimeException extends RuntimeException {
 }

@@ -14,4 +14,9 @@ public class A {
 	public A() {
 
 	}
+
+	public Object getInt() {
+		
+		return i;
+	}
 }

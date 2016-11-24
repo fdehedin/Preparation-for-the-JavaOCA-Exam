@@ -81,19 +81,18 @@ public class PeriodTester {
 		LocalDateTime dateTime2 = LocalDateTime.now();
 		dateTime2 = dateTime2.plus(period);
 
-
-		LocalDate dt = LocalDate.of(1977,  6,  28);
-		//remember, we can't chain period.. so this will be only months...
+		LocalDate dt = LocalDate.of(1977, 6, 28);
+		// remember, we can't chain period.. so this will be only months...
 		Period period1 = Period.ofDays(2).ofMonths(2);
 		dt = dt.plus(period1);
 		MatcherAssert.assertThat(dt.getDayOfMonth(), Matchers.is(28));
 		MatcherAssert.assertThat(dt.getMonth().getValue(), Matchers.is(8));
-		
+
 		// doesn't work..
 		LocalTime time = LocalTime.now();
 		exception.expect(UnsupportedTemporalTypeException.class);
 		time.plus(period);
-		
+
 	}
 
 	@Test
@@ -111,7 +110,7 @@ public class PeriodTester {
 		formater = DateTimeFormatter.ofLocalizedDate(FormatStyle.MEDIUM);
 		formatted = this.born.format(formater);
 		MatcherAssert.assertThat(formatted, Matchers.equalTo("Jun 28, 1977"));
-
+		
 		formater = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 		formatted = this.born.format(formater);
 		MatcherAssert.assertThat(formatted, Matchers.equalTo("28.06.1977"));

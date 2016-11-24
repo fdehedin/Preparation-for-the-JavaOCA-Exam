@@ -7,8 +7,14 @@ import org.junit.Test;
 
 public class A {
 
-	A() {
+	// cannot be protected when using in antoher package!!
+	// A() {
+	public A() {
 
 	}
+
+	public int getInt() {
+		return 1;
+	};
 
 }

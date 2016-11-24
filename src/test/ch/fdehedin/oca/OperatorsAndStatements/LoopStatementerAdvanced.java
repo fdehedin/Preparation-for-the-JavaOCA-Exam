@@ -18,6 +18,26 @@ public class LoopStatementerAdvanced {
 	// works:
 	long a = 12321321300L;
 
+	public void testLoop() {
+		int x;
+		for (int i = 0; i < 0; i++)
+			x = 3;
+
+		if (false) {
+			x = 3;
+		}
+
+		do {
+			x = 3;
+		} while (false);
+
+		// won't compile!!!!
+		// while (false) {
+		// x = 3;
+		// }
+
+	}
+
 	// the following doesn't work, since the literal is actually an "int" and is
 	// converted to
 	// long.. and the literal is too big for int.. put an L at the end of the
@@ -36,7 +56,7 @@ public class LoopStatementerAdvanced {
 				log.info("Standard");
 			case 2:
 				log.info("2");
-				//break outer;
+				// break outer;
 				continue outer;
 
 			}

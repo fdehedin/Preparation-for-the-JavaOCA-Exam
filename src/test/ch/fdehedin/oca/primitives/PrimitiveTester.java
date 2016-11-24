@@ -138,6 +138,9 @@ public class PrimitiveTester {
 		byte b = 10;
 		assertThat(b == 10, is(true));
 
+		int i10 = 10;
+	//	byte bte = i10;
+		
 		short s = b;
 		assertThat(s == b, is(true));
 		assertThat(s == 10, is(true));

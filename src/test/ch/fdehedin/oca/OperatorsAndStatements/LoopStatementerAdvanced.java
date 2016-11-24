@@ -124,4 +124,24 @@ public class LoopStatementerAdvanced {
 		assertThat(result, log(equalTo("987643210")));
 	}
 
+	@Test
+	public void labeler2() {
+
+		int i;
+		OUTHER: for (i = 0; i < 4; i++) {
+			LOOP: if (i == 2) {
+				break LOOP;
+			}else{
+				break OUTHER;
+			}
+		}
+
+		assertThat(i, is(0));
+
+		LOOP2: if (i == 2) {
+			break LOOP2;
+		
+		}
+	}
+
 }

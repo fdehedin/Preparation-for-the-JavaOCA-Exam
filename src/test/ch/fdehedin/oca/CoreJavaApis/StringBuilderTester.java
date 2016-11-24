@@ -239,6 +239,28 @@ public class StringBuilderTester {
 		// will throw StringIndexOutOfBoundsException
 		// sb = new StringBuilder();
 		// sb.append("a").insert(2, "asdf").substring(0, 4);
+		
+	}
+	
+	@Test
+	public void testSubstringExt3(){
+		StringBuilder sb = new StringBuilder("welcome  to the sea");
+		String s = sb.toString().trim();
+		//trim will NOT remove spaces in between!
+		assertThat(s, equalTo("welcome  to the sea"));
+		sb = new StringBuilder("welcome");
+		s = sb.substring(2,4);
+		//REMEMBER, alwys cut BEFORE!
+		assertThat(s, equalTo("lc"));
+		sb = new StringBuilder("Method");
+		s = sb.substring(2,5);
+		assertThat(s, equalTo("tho"));
+		sb = new StringBuilder("statement");
+		s = sb.substring(3,3);
+		assertThat(s, equalTo(""));
+		sb = new StringBuilder("statement");
+		s = sb.substring(1,5);
+		assertThat(s, equalTo("tate"));
 	}
 
 }

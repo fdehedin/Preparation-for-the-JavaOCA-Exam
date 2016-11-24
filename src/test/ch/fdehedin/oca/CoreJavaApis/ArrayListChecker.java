@@ -211,16 +211,25 @@ public class ArrayListChecker {
 	public void convertArrayToListToArray() {
 		int[] arr1 = { 1, 2, 3 };
 		// this won't compile, since Array.asList doesn't deal with autoboxing..
-		//List<Integer> lst1 = Arrays.asList(arr1);
-		
-		
+		// List<Integer> lst1 = Arrays.asList(arr1);
+
 		Integer[] arr2 = { 1, 2, 3 };
 		List<Integer> lst1 = Arrays.asList(arr2);
-		//this will throw an exception, since we have an array as "datastore"
-		//lst1.remove(0);
-		
+		// this will throw an exception, since we have an array as "datastore"
+		// lst1.remove(0);
+
 		List<Integer> lst2 = new ArrayList<>(Arrays.asList(arr2));
-		System.out.println(lst2.remove(3)); //true;
-		
+		System.out.println(lst2.remove(3)); // true;
+
+	}
+
+	@Test
+	public void testSublist() {
+		Integer[] arr2 = { 1, 2, 3 };
+		List<Integer> lst2 = new ArrayList<>(Arrays.asList(arr2));
+		log.info("lst2:" + lst2);
+		List<Integer> lst3 = lst2.subList(1, 2);
+		log.info("lst2 after sublist (it will be 1,2,3):" + lst2);
+		log.info("lst3: will be [2]:" + lst3);
 	}
 }

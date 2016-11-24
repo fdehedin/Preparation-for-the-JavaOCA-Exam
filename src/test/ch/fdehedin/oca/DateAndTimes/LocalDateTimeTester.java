@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.logging.Logger;
 
 import org.junit.Rule;
@@ -66,6 +68,27 @@ public class LocalDateTimeTester {
 		//dt.plusMinutes(1)//does not compile.. because its LocalDate, not LocalTime nor LocalDateTime
 	}
 
+	@Test
+	public void test3(){
+		//international date format ISO.....
+		LocalDateTime current = LocalDateTime.now();
+		log.info("current date time: "+current);
+		LocalDateTime tomorrow = current.plusDays(1);
+		log.info("current date time after plus days: "+current);
+		log.info("tomorrow date time: "+tomorrow);
+		Period diffNowTomorrow = Period.between(tomorrow.toLocalDate(),  current.toLocalDate());
+		log.info("difference from today and tomorrow (period / days): "+diffNowTomorrow.getDays());
+	
+	LocalDate myBorn = LocalDate.of(1977,  6,  28);
+	DateTimeFormatter df = DateTimeFormatter.ofPattern("dd.M.yyyy");
+	
+	String myBornFormatted = myBorn.format(df);
+	log.info("myBornFormatted: "+myBornFormatted);
+	assertThat(myBornFormatted, equalTo("28.6.1977"));
+	
+	
+	}
+	
 	@Test
 	public void manipulate() {
 		LocalDateTime dateTime2 = LocalDateTime.of(1977, 6, 28, 12, 00);

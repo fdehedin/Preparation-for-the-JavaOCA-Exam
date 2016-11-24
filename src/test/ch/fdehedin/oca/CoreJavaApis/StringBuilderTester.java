@@ -12,6 +12,10 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+/**
+ * @author juiceterry
+ *
+ */
 public class StringBuilderTester {
 
 	private static final Logger log = Logger.getLogger(StringPooler.class.getSimpleName());
@@ -194,7 +198,7 @@ public class StringBuilderTester {
 		assertThat(a.toString(), equalTo("acdefg"));
 
 		a = new StringBuilder("1234");
-		a = a.delete(0,1);
+		a = a.delete(0, 1);
 		assertThat(a.toString(), equalTo("234"));
 
 	}
@@ -208,6 +212,33 @@ public class StringBuilderTester {
 		sb.setLength(2);
 		assertThat(sb.toString(), equalTo("ab"));
 
+	}
+
+	@Test
+	public void testSubstring3() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("a");
+		sb.append("asdf");
+		sb.insert(2, "asdf");
+		assertThat(sb.toString(), equalTo("aaasdfsdf"));
+
+		sb = new StringBuilder("superman");
+		sb.append("a").insert(2, "asdf").substring(0, 4);
+		// watch out! "substring" is not changing the actual StringBuilder
+		// Object. It returns String!
+		assertThat(sb.toString(), equalTo("suasdfpermana"));
+
+		sb = new StringBuilder("animals");
+		String sub = sb.substring(sb.indexOf("a"), sb.indexOf("al"));
+		assertThat(sub, equalTo("anim"));
+		
+		sb = new StringBuilder("superman");
+		 sub = sb.substring(sb.indexOf("u"), sb.indexOf("man"));
+		assertThat(sub, equalTo("uper"));
+		
+		// will throw StringIndexOutOfBoundsException
+		// sb = new StringBuilder();
+		// sb.append("a").insert(2, "asdf").substring(0, 4);
 	}
 
 }

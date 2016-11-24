@@ -49,5 +49,9 @@ public class Penguin extends Bird {
 		Penguin penguin = new Penguin();
 		assertThat(penguin.x == 30, is(true));
 		assertThat(penguin.y == 40, is(true));
+		
+		bird = penguin;
+		assertThat(penguin.x == 30, is(true));
+		assertThat(penguin.y == 40, is(true));
 	}
 }

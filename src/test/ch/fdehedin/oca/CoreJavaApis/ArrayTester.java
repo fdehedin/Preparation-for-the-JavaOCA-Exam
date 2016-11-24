@@ -80,7 +80,7 @@ public class ArrayTester {
 	
 	@Test
 	public void arrayInstantiator() {
-	
+
 		
 		// all of those work even when there is space between brackets and type
 		// definition..

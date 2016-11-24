@@ -22,6 +22,7 @@ public class InitializerOrderExtended {
 
 	static {
 		ORDER.add("another static class init");
+		//throw new Exception("");
 	}
 
 	{

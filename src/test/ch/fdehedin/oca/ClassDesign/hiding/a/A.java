@@ -7,8 +7,14 @@ import org.junit.Test;
 
 public class A {
 
-	A() {
+	public int i = 10;
+	
+	public A() {
 
 	}
 
+	public int getInt(){
+		return i;
+	}
+	
 }

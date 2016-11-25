@@ -261,6 +261,12 @@ public class StringBuilderTester {
 		sb = new StringBuilder("statement");
 		s = sb.substring(1,5);
 		assertThat(s, equalTo("tate"));
-	}
+				
+		String str = "01234567";
+		str = str.substring(4, 7);
+		assertThat(str, equalTo("456"));
+	}	
+	
+	
 
 }

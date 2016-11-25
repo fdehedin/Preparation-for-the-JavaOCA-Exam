@@ -1,24 +1,25 @@
 package ch.fdehedin.oca.primitives;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.is;
+
+import java.util.ArrayList;
 import java.util.logging.Logger;
-import static org.hamcrest.MatcherAssert.*;
-import static org.hamcrest.Matchers.*;
-import org.junit.Assert;
+
 import org.junit.Rule;
-
-import java.util.logging.Logger;
-
-import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
-import ch.fdehedin.oca.CoreJavaApis.StringPooler;
 
 public class PrimitiveTester {
 	@Rule
 	public final ExpectedException exception = ExpectedException.none();
 
 	private static final Logger log = Logger.getLogger(PrimitiveTester.class.getSimpleName());
+
+	public void PrimitiveTester(long pLong) {
+		pLong = pLong;
+	} // (1)
 
 	// normal single char..
 	char ch1 = 'c';
@@ -139,8 +140,8 @@ public class PrimitiveTester {
 		assertThat(b == 10, is(true));
 
 		int i10 = 10;
-	//	byte bte = i10;
-		
+		// byte bte = i10;
+
 		short s = b;
 		assertThat(s == b, is(true));
 		assertThat(s == 10, is(true));
@@ -221,6 +222,28 @@ public class PrimitiveTester {
 	}
 
 	@Test
+	public void booleanTest2() {
+		boolean b1;
+		b1 = Boolean.parseBoolean("true") == true;
+		assertThat(b1, is(true));// !!!
+
+		b1 = Boolean.parseBoolean("TrUe") == new Boolean(null);
+		assertThat(b1, is(false));// !!! FALSE FALSE
+
+		b1 = new Boolean("TrUe") == new Boolean(true);
+		assertThat(b1, is(false));// !!! FALSE
+
+		boolean b2 = new Boolean("TrUe");
+		assertThat(b2, is(true));// !!! TRUE TRUE
+
+		boolean b3 = new Boolean(true);
+		assertThat(b3, is(true));// !!! TRUE TRUE
+
+		assertThat(b2 == b3, is(true));// !!! FALSE
+
+	}
+
+	@Test
 	public void carCasting() {
 		// '\u0000' (or 0) and a maximum value of '\uffff' (or 65,535
 		// inclusive).
@@ -237,6 +260,25 @@ public class PrimitiveTester {
 	}
 
 	@Test
+	public void otherCasting() {
+		Integer i = new Integer(42);
+		Long ln = new Long(42);
+		Double d = new Double(42.0);
+
+		// Incompatible operand types Integer and Long
+		// assertThat(i == ln, is(false));
+
+		// Incompatible operand types Long and Double
+		// assertThat(ln == d, is(false));
+
+		assertThat(i.equals(d), is(false));
+		assertThat(d.equals(ln), is(false));
+
+		assertThat(ln.equals(42), is(false));
+
+	}
+
+	@Test
 	public void charTest() {
 
 		char s = 's';
@@ -246,5 +288,14 @@ public class PrimitiveTester {
 
 		System.out.println(es == e);
 
+	}
+
+	@Test
+	public void booleanTest() {
+		Object o = null;
+		ArrayList<Object> c = new ArrayList<>();
+		for (Object o2 : c) {
+
+		}
 	}
 }

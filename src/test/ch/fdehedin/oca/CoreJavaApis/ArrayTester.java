@@ -51,6 +51,23 @@ public class ArrayTester {
 	}
 
 	@Test
+	public void loopTester() {
+		int INT1 = 1;
+		int INT2 = 2;
+		for (int i = INT1; i < INT2; i++) {
+			System.out.println(i);
+		}
+	}
+
+	@Test
+	public void initWithStatement() {
+		int i = 10;
+		int arr[] = new int[i = 3];
+		assertThat(arr.length, is(3));
+
+	}
+
+	@Test
 	public void basicTests() {
 		int[] numbers = new int[3]; // 3 elements
 		assertThat(numbers[2], is(0));
@@ -61,27 +78,26 @@ public class ArrayTester {
 		exception.expect(IndexOutOfBoundsException.class);
 		assertThat(numbers[3], is(0)); // 0, 1, 2 = 3 elements...
 	}
-	
+
 	@Test
 	public void negativeAccessTests() {
-		int[] numbers = new int[]{1,2,3}; // 3 elements
+		int[] numbers = new int[] { 1, 2, 3 }; // 3 elements
 		exception.expect(ArrayIndexOutOfBoundsException.class);
-		log.info("test: "+numbers[-1]);
+		log.info("test: " + numbers[-1]);
 	}
 
 	@Test
-	public void arrayLengthTest(){
+	public void arrayLengthTest() {
 		int[] arr = new int[0];
-		assertThat(arr==null, is(false));
-		
+		assertThat(arr == null, is(false));
+
 		String[] str = new String[0];
-		assertThat(str==null, is(false));
+		assertThat(str == null, is(false));
 	}
-	
+
 	@Test
 	public void arrayInstantiator() {
 
-		
 		// all of those work even when there is space between brackets and type
 		// definition..
 		int[] arr1[] = new int[2][];

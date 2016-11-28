@@ -275,9 +275,10 @@ public class PrimitiveTester {
 		assertThat(d.equals(ln), is(false));
 
 		assertThat(ln.equals(42), is(false));
-
 	}
 
+
+	
 	@Test
 	public void charTest() {
 

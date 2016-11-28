@@ -231,42 +231,63 @@ public class StringBuilderTester {
 		sb = new StringBuilder("animals");
 		String sub = sb.substring(sb.indexOf("a"), sb.indexOf("al"));
 		assertThat(sub, equalTo("anim"));
-		
+
 		sb = new StringBuilder("superman");
-		 sub = sb.substring(sb.indexOf("u"), sb.indexOf("man"));
+		sub = sb.substring(sb.indexOf("u"), sb.indexOf("man"));
 		assertThat(sub, equalTo("uper"));
-		
+
 		// will throw StringIndexOutOfBoundsException
 		// sb = new StringBuilder();
 		// sb.append("a").insert(2, "asdf").substring(0, 4);
-		
+
 	}
-	
+
 	@Test
-	public void testSubstringExt3(){
+	public void testSubstringExt3() {
 		StringBuilder sb = new StringBuilder("welcome  to the sea");
 		String s = sb.toString().trim();
-		//trim will NOT remove spaces in between!
+		// trim will NOT remove spaces in between!
 		assertThat(s, equalTo("welcome  to the sea"));
 		sb = new StringBuilder("welcome");
-		s = sb.substring(2,4);
-		//REMEMBER, alwys cut BEFORE!
+		s = sb.substring(2, 4);
+		// REMEMBER, alwys cut BEFORE!
 		assertThat(s, equalTo("lc"));
 		sb = new StringBuilder("Method");
-		s = sb.substring(2,5);
+		s = sb.substring(2, 5);
 		assertThat(s, equalTo("tho"));
 		sb = new StringBuilder("statement");
-		s = sb.substring(3,3);
+		s = sb.substring(3, 3);
 		assertThat(s, equalTo(""));
 		sb = new StringBuilder("statement");
-		s = sb.substring(1,5);
+		s = sb.substring(1, 5);
 		assertThat(s, equalTo("tate"));
-				
+
 		String str = "01234567";
 		str = str.substring(4, 7);
 		assertThat(str, equalTo("456"));
-	}	
-	
-	
+
+		str = "hamburger".substring(4, 8);
+		assertThat(str, equalTo("urge"));
+
+		str = "smiles".substring(1, 5);
+		assertThat(str, equalTo("mile"));
+
+		str = "unhappy".substring(2);
+		assertThat(str, equalTo("happy"));
+
+		str = "Harbison".substring(3);
+		assertThat(str, equalTo("bison"));
+
+		str = "emptiness".substring(9);
+		assertThat(str, equalTo(""));
+
+		String String = "string isa string";
+		
+		String = String.substring(3, 6);
+		assertThat(String, equalTo("ing"));
+
+		double b = 10.0;
+		
+	}
 
 }

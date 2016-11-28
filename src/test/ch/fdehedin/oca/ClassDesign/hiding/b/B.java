@@ -10,17 +10,23 @@ import ch.fdehedin.oca.ClassDesign.hiding.a.A;
 public class B extends A {
 
 	public int i = 20;
-	
+
 	public B() {
 		super();
-		//IF THE CONSTRUCTOR IS DEFAULT ACCESS (NO MODIFIER)
+
+		// IF THE CONSTRUCTOR IS DEFAULT ACCESS (NO MODIFIER)
 		// this is wrong, since the constructor of the parent class is "default"
 		// -> not visible due to other package!
-		
+
 	}
- 
-	public Integer getInt(){
+
+	public Integer getInt() {
+		//
+
+		B b = new B();
+		A a = new A();
+		a = b;
 		return i;
 	}
-	
+
 }

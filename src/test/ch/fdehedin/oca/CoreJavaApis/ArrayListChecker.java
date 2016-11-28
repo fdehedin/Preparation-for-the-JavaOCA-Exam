@@ -131,6 +131,13 @@ public class ArrayListChecker {
 	}
 
 	@Test
+	public void autoboxerAdd(){
+		ArrayList<Double> lst = new ArrayList();
+		lst.add((double) 123);
+		lst.indexOf("Stest");
+	}
+	
+	@Test
 	public void set() {
 		ArrayList<String> lst = new ArrayList<>();
 

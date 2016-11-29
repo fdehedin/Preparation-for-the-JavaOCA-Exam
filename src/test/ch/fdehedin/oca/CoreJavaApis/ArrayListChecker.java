@@ -65,6 +65,17 @@ public class ArrayListChecker {
 	}
 
 	@Test
+	public void adder() {
+		List al = new ArrayList(); // 1
+
+		assertThat(al.add(123), is(true));
+
+		al.add(111); // 2
+		exception.expect(IndexOutOfBoundsException.class);
+		al.get(al.size());
+	}
+
+	@Test
 	public void add() {
 
 		ArrayList list1 = new ArrayList();
@@ -131,12 +142,12 @@ public class ArrayListChecker {
 	}
 
 	@Test
-	public void autoboxerAdd(){
+	public void autoboxerAdd() {
 		ArrayList<Double> lst = new ArrayList();
 		lst.add((double) 123);
 		lst.indexOf("Stest");
 	}
-	
+
 	@Test
 	public void set() {
 		ArrayList<String> lst = new ArrayList<>();

@@ -12,21 +12,28 @@ public class B extends A {
 	public int i = 20;
 
 	public B() {
-		super();
-
-		// IF THE CONSTRUCTOR IS DEFAULT ACCESS (NO MODIFIER)
-		// this is wrong, since the constructor of the parent class is "default"
-		// -> not visible due to other package!
 
 	}
 
+	@Override
 	public Integer getInt() {
 		//
 
-		B b = new B();
-		A a = new A();
-		a = b;
 		return i;
+	}
+
+	public static void main(String[] args) {
+		A a = new A();
+		B b = new B();
+		A ab = new B();
+
+		System.out.println("a: " + a.getInt()); // 10
+		System.out.println("b: " + b.getInt()); // 20
+		System.out.println("ab: " + ab.getInt()); // 20
+
+		System.out.println("a.i: " + a.i); // 10
+		System.out.println("b.i: " + b.i); // 20
+		System.out.println("ab.i: " + ab.i); // 10!!!!!!!
 	}
 
 }

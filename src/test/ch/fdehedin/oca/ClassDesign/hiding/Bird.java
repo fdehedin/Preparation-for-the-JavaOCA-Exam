@@ -7,6 +7,10 @@ import org.junit.Test;
 
 public class Bird {
 
+public Bird(int i){
+	
+}
+	
 	int x = 10;
 	static int y = 20;
 
@@ -21,7 +25,7 @@ public class Bird {
 
 	@Test
 	public void testFly() {
-		Bird wonder = new Penguin();
+		Bird wonder = new Penguin("");
 
 		// this is a special case! but actually logic..
 		// the method "isCanFly" is private on Bird.. so it actually can only be

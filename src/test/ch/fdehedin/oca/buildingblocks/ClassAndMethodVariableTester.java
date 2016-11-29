@@ -14,6 +14,16 @@ public class ClassAndMethodVariableTester {
 			i = 1;
 		}
 
+		if (true) {
+			System.out.println("has params");
+		}
+
+		{
+			{
+				System.out.println("no params");
+			}
+		}
+
 		// This does not work, since the "i" is not initialized in the current
 		// block!
 		// System.out.println("i:" + i);

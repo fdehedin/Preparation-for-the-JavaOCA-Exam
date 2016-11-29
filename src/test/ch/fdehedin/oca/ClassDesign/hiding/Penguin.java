@@ -11,8 +11,11 @@ public class Penguin extends Bird {
 	int x = 30;
 	static int y = 40;
 
-	public Penguin() {
+	public Penguin(String s) {
+		super(1);
 		s = "test";
+		
+	
 	}
 
 	public static void init() {
@@ -25,7 +28,7 @@ public class Penguin extends Bird {
 
 	@Test
 	public void testFly() {
-		Penguin wonder = new Penguin();
+		Penguin wonder = new Penguin("");
 		assertThat(wonder.isCanFly(), is(false));
 	}
 
@@ -42,14 +45,14 @@ public class Penguin extends Bird {
 
 	@Test
 	public void testVariables() {
-		Bird bird = new Penguin();
+		Bird bird = new Penguin("");
 		assertThat(bird.x == 10, is(true));
 		assertThat(bird.y == 20, is(true));
 
-		Penguin penguin = new Penguin();
+		Penguin penguin = new Penguin("");
 		assertThat(penguin.x == 30, is(true));
 		assertThat(penguin.y == 40, is(true));
-		
+
 		bird = penguin;
 		assertThat(penguin.x == 30, is(true));
 		assertThat(penguin.y == 40, is(true));

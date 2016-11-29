@@ -59,6 +59,21 @@ public class ExceptionTester {
 		log.info("finally");
 	}
 
+	public static void callFallRuntime() {
+		fallRunTime();
+		try {
+			//the fall thrower must bei catched!! (checked exception)
+			fallThrower();
+		} catch (Throwable e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	public static void fallRunTime() throws RuntimeException {
 	}
+	
+	public static void fallThrower() throws Throwable {
+	}
+
 }

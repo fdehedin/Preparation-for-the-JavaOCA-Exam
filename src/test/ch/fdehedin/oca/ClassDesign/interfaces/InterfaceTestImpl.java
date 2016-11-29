@@ -8,11 +8,7 @@ public class InterfaceTestImpl implements InterfaceTest, InterfaceTest2, Interfa
 
 	}
 
-	@Override
-	public void defaultMethod() {
-		// TODO Auto-generated method stub
 
-	}
 
 	public static void main(String[] args) {
 		// static methods with same name are bound to the interface, not to the
@@ -40,6 +36,14 @@ public class InterfaceTestImpl implements InterfaceTest, InterfaceTest2, Interfa
 	public void doSomethingDefault() {
 		InterfaceTest2.super.doSomethingDefault();
 		InterfaceTest3.super.doSomethingDefault();
+	}
+
+
+
+	@Override
+	public void defaultMethod()  {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

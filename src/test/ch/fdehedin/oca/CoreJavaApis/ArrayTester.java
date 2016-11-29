@@ -51,12 +51,57 @@ public class ArrayTester {
 	}
 
 	@Test
+	public void chainer() {
+		assertThat("hello".concat(" world").trim().equals("hello world"), is(true));
+
+	}
+
+	@Test
+	public void arrayClassTester() {
+		int[] array = new int[2];
+		assertThat(array.getClass().isArray(), is(true));
+
+		assertThat(array.length, is(2));
+
+		assertThat(array.getClass().isPrimitive(), is(false));
+		int i = 0;
+
+		assertThat(Integer.valueOf(i).getClass().isPrimitive(), is(false));
+	}
+
+	@Test
 	public void loopTester() {
+
+		for (;; new String("")) {
+			break;
+		}
+
 		int INT1 = 1;
 		int INT2 = 2;
+
 		for (int i = INT1; i < INT2; i++) {
 			System.out.println(i);
 		}
+
+		int i = 0;
+
+		String s = null;
+		OUTHER: for (;; ++i) {
+			int y = 0;
+			for (; y < 20; y++) {
+				System.out.println("i: " + i + "  y:" + y);
+				if (y == 10) {
+					break OUTHER;
+				}
+			}
+		}
+	}
+
+	@Test
+	public void initTester() {
+		Object[] obj = new Object[2];
+		obj[0] = Integer.valueOf("20");
+
 	}
 
 	@Test

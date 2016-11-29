@@ -13,7 +13,7 @@ public abstract interface InterfaceTest {
 	//private void privateMethod();
 	
 	//new in java8: default..
-	void defaultMethod();
+	void defaultMethod() throws Exception;
 	
 	//new in java8: static methods (with Body!)
 	static  void staticMethod(){

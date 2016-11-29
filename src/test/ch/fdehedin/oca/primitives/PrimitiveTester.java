@@ -277,8 +277,6 @@ public class PrimitiveTester {
 		assertThat(ln.equals(42), is(false));
 	}
 
-
-	
 	@Test
 	public void charTest() {
 
@@ -298,5 +296,46 @@ public class PrimitiveTester {
 		for (Object o2 : c) {
 
 		}
+	}
+
+	@Test
+	public void testMixed() {
+		Character b = 'a' + 1;
+		assertThat(b.equals('b'), is(true));
+		assertThat(b == 'b', is(true));
+
+		System.out.println("1" + 1 + 3);
+
+	}
+
+	@Test
+	public void initAndSumAndChain() {
+		int i = 20;
+		int a = i + (i = 30) + 1;
+
+		assertThat(i == 30, is(true));
+		assertThat(a == 51, is(true));
+
+	}
+
+	@Test
+	public void testArrayInits() {
+		int[] ints = new int[10];
+		for (int i = 0; i < ints.length; i++) {
+			log.info("primitive: " + ints[i]);
+		}
+		Integer[] integers = new Integer[10];
+		for (int i = 0; i < integers.length; i++) {
+			log.info("autoboxed: " + integers[i]);
+		}
+		for (int i = 0; i < 10; i++)
+			System.out.print(i + " "); // 1
+		for (int i = 10; i > 0; i--)
+			System.out.print(i + " "); // 2
+		int i;
+
+		double dbl = .5;
+
+		System.out.println(1 + 3.0);
 	}
 }

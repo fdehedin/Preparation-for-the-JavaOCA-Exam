@@ -114,6 +114,9 @@ public class ArrayTester {
 
 	@Test
 	public void basicTests() {
+		
+	
+		
 		int[] numbers = new int[3]; // 3 elements
 		assertThat(numbers[2], is(0));
 

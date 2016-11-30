@@ -62,4 +62,54 @@ public class ArrayConverter {
 		list.add("test");
 	}
 
+	@Test
+	public void convertArrayListToArrayToArrayList() {
+		List<String> arrayList = new ArrayList<>();
+		arrayList.add("1");
+		arrayList.add("2");
+		Object[] array = arrayList.toArray();
+		assertThat(array.length, is(2));
+
+		// can't cast! this will throw exception
+		// String[] arrayStr1 = (String[]) arrayList.toArray();
+		// assertThat(arrayStr1.length, is(2));
+
+		String[] arrayStr = arrayList.toArray(new String[0]);
+		assertThat(arrayStr.length, is(2));
+
+		String[] arrayStr2 = arrayList.toArray(new String[arrayList.size()]);
+		assertThat(arrayStr2.length, is(2));
+
+		List<String> lstNew = Arrays.asList(arrayStr2);
+		assertThat(lstNew.size(), is(2));
+
+		// now lets remove the 1 element of the original arrayList
+		// remember: we cannot remove from lstNew..
+		String s1 = arrayList.remove(0);
+		assertThat(s1, equalTo("1"));
+		assertThat(arrayList.size(), is(1));
+ 
+		arrayList.add(0, "1");
+		log.info(arrayList.toString());
+		log.info(lstNew.toString());
+		// AAAAND everything is same again!
+		assertThat(arrayList.equals(lstNew), is(true));
+		
+		//remove by object returns boolean
+		boolean b = arrayList.remove("1");
+		assertThat(b, is(true));
+		
+		arrayList.add(0, "1");
+		
+		//remove by index returns removed object..
+		String s = arrayList.remove(0);
+		assertThat(s, equalTo("1"));
+		//lets add it again
+		arrayList.add(0, s);
+		
+		int i = arrayList.indexOf("1");
+		assertThat(i, is(0));
+		
+	}
+
 }

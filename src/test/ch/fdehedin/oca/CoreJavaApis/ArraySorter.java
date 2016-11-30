@@ -29,6 +29,30 @@ public class ArraySorter {
 		Collections.sort(list);
 		assertThat(list, contains("batman", "robin"));
 
+		list = new ArrayList<>();
+		list.add("robin");
+		list.add("batman");
+		String[] array = list.toArray(new String[list.size()]);
+
+		Arrays.sort(array);
+		assertThat(array[0], equalTo("batman"));
+
 	}
 
+	@Test
+	public void search(){
+		List<String> list = new ArrayList<>();
+		list.add("robin");
+		list.add("batman");
+		String[] array = list.toArray(new String[list.size()]);
+		
+		Arrays.sort(array);
+		
+		int i = Arrays.binarySearch(array,"robin");
+		assertThat(i, is(1));
+		
+		i = Arrays.binarySearch(array,"batman");
+		assertThat(i, is(0));
+	}
+	
 }

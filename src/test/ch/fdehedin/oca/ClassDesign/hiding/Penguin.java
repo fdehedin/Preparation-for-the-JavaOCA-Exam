@@ -8,7 +8,7 @@ import org.junit.Test;
 public class Penguin extends Bird {
 
 	static String s = "s";
-	int x = 30;
+	final int x = 30;
 	static int y = 40;
 
 	public Penguin(String s) {
@@ -56,5 +56,9 @@ public class Penguin extends Bird {
 		bird = penguin;
 		assertThat(penguin.x == 30, is(true));
 		assertThat(penguin.y == 40, is(true));
+	}
+	
+	public final int makeNoise(){
+		
 	}
 }

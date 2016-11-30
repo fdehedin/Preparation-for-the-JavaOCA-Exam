@@ -7,15 +7,15 @@ import org.junit.Test;
 
 public class Bird {
 
-public Bird(int i){
-	
-}
-	
-	int x = 10;
-	static int y = 20;
+	public Bird(int i) {
 
-	
+	}
+
+	final int x = 10;
+	static final int y = 20;
+
 	private boolean isCanFly() {
+
 		return true;
 	}
 
@@ -37,5 +37,9 @@ public Bird(int i){
 	public Number getNumberOfWings() {
 		return 2;
 	};
+
+	public final void makeNoise(int i) {
+
+	}
 
 }

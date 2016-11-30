@@ -41,8 +41,6 @@ public class LocalDateTimeTester {
 
 		LocalTime time = LocalTime.parse("09:03:34");
 		log.info("time: " + time);
-		
-
 
 	}
 
@@ -144,6 +142,30 @@ public class LocalDateTimeTester {
 
 		dateTime2 = dateTime2.minusHours(24);
 		assertThat(dateTime2.toString(), equalTo("1977-06-28T14:00:03"));
+	}
+
+	@Test
+	public void creator() {
+		// Goal: make 1.12.2016:
+		LocalDate date = LocalDate.of(2016, Month.DECEMBER, 1);
+		assertThat(date.toString(), equalTo("2016-12-01"));
+
+		date = LocalDate.of(2016, 12, 1);
+		assertThat(date.toString(), equalTo("2016-12-01"));
+
+	}
+
+	@Test
+	public void periodTester() {
+		LocalDate date = LocalDate.of(2018, Month.OCTOBER, 30);
+		date = date.minus(Period.of(2, 1, -1));
+		Period p = Period.ofDays(2);
+		p = Period.ofYears(2);
+		assertThat(date.toString(), equalTo("2016-12-01"));
+
+		LocalDate date2 = LocalDate.parse("2012-12-12", DateTimeFormatter.ISO_LOCAL_DATE);
+	
+		
 	}
 
 }

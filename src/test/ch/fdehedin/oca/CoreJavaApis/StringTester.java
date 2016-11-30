@@ -14,6 +14,19 @@ public class StringTester {
 		assertThat(s, equalTo("nullTEST"));
 		assertThat(s == "nullTEST", is(false));
 
+		boolean b = 1==1.0;
+		assertThat(b, is(true));
+		
+		boolean c = 1 == 1;
+		
+		s = s + null;
+		s = s + 2;
+		s = s + 'a';
+		s = s + 1.0;
+		s.length();
+		
+		"TEST".length();
+		
 	}
 
 	@Test

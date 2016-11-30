@@ -39,6 +39,14 @@ public class ArrayListChecker {
 	}
 
 	@Test
+	public void autotobx(){
+		List<Integer> ints = new ArrayList<Integer>();
+		ints.add(1);
+		ints.add(null);
+	
+	}
+	
+	@Test
 	public void listComparer() {
 		List<String> lst1 = new ArrayList<String>();
 		List<String> lst2 = new ArrayList<>();

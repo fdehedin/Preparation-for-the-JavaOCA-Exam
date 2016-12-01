@@ -58,7 +58,4 @@ public class Penguin extends Bird {
 		assertThat(penguin.y == 40, is(true));
 	}
 	
-	public final int makeNoise(){
-		
-	}
 }

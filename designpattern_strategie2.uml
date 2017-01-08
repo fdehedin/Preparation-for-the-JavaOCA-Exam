@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_va494MfAEeaGPcrUwNj8lQ" name="NewModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="_ZKH_oMfCEeaJHezgDzPd1A" name="ch.fdehedin.patterns.strategie.weapons">
+    <packagedElement xmi:type="uml:Class" xmi:id="_-ru1QMfBEeaJHezgDzPd1A" name="Queen">
+      <generalization xmi:id="_L1s8MMfCEeaJHezgDzPd1A" general="_W3fEEMfBEeaGPcrUwNj8lQ"/>
+      <ownedOperation xmi:id="_CgbO4MfCEeaJHezgDzPd1A" name="fight"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_W3fEEMfBEeaGPcrUwNj8lQ" name="Character" isAbstract="true">
+      <ownedOperation xmi:id="_ZDHOIMfBEeaGPcrUwNj8lQ" name="fight" isAbstract="true"/>
+      <ownedOperation xmi:id="_lTw1gMfDEeaJHezgDzPd1A" name="setWeapon">
+        <ownedParameter xmi:id="_oZ-YgMfDEeaJHezgDzPd1A" name="weaponBehaviour" type="_-Qz-YMfCEeaJHezgDzPd1A"/>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ESiswMfCEeaJHezgDzPd1A" name="Troll">
+      <generalization xmi:id="_MURHgMfCEeaJHezgDzPd1A" general="_W3fEEMfBEeaGPcrUwNj8lQ"/>
+      <ownedOperation xmi:id="_G08YEMfCEeaJHezgDzPd1A" name="fight"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_IMhPAMfCEeaJHezgDzPd1A" name="King">
+      <generalization xmi:id="_NeW8EMfCEeaJHezgDzPd1A" general="_W3fEEMfBEeaGPcrUwNj8lQ"/>
+      <ownedOperation xmi:id="_IMhPAcfCEeaJHezgDzPd1A" name="fight"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_J0LwYMfCEeaJHezgDzPd1A" name="Knight">
+      <generalization xmi:id="_Mu_UoMfCEeaJHezgDzPd1A" general="_W3fEEMfBEeaGPcrUwNj8lQ"/>
+      <ownedOperation xmi:id="_J0LwYcfCEeaJHezgDzPd1A" name="fight"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_-Qz-YMfCEeaJHezgDzPd1A" name="WeaponBehaviour">
+      <ownedOperation xmi:id="_CsgGkMfDEeaJHezgDzPd1A" name="useWeapon"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_ABJ6oMfDEeaJHezgDzPd1A" name="AxeBehaviour">
+      <interfaceRealization xmi:id="_Z0PeMMfDEeaJHezgDzPd1A" client="_ABJ6oMfDEeaJHezgDzPd1A" supplier="_-Qz-YMfCEeaJHezgDzPd1A" contract="_-Qz-YMfCEeaJHezgDzPd1A"/>
+      <ownedOperation xmi:id="_ETHfEMfDEeaJHezgDzPd1A" name="useWeapon"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FmNeoMfDEeaJHezgDzPd1A" name="KnifeBehaviour">
+      <interfaceRealization xmi:id="_YUSHUMfDEeaJHezgDzPd1A" client="_FmNeoMfDEeaJHezgDzPd1A" supplier="_-Qz-YMfCEeaJHezgDzPd1A" contract="_-Qz-YMfCEeaJHezgDzPd1A"/>
+      <ownedOperation xmi:id="_FmNeocfDEeaJHezgDzPd1A" name="useWeapon"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_GrZlEMfDEeaJHezgDzPd1A" name="AxeBehaviour">
+        <ownedOperation xmi:id="_GraMIMfDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_JxOtkMfDEeaJHezgDzPd1A" name="SwordBehaviour">
+        <ownedOperation xmi:id="_JxOtkcfDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_KmeTgMfDEeaJHezgDzPd1A" name="SwordBehaviour">
+      <interfaceRealization xmi:id="_ZD3xMMfDEeaJHezgDzPd1A" client="_KmeTgMfDEeaJHezgDzPd1A" supplier="_-Qz-YMfCEeaJHezgDzPd1A" contract="_-Qz-YMfCEeaJHezgDzPd1A"/>
+      <ownedOperation xmi:id="_KmeTgcfDEeaJHezgDzPd1A" name="useWeapon"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_KmeTgsfDEeaJHezgDzPd1A" name="AxeBehaviour">
+        <ownedOperation xmi:id="_KmeTg8fDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_KmeThMfDEeaJHezgDzPd1A" name="SwordBehaviour">
+        <ownedOperation xmi:id="_KmeThcfDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_MeZecMfDEeaJHezgDzPd1A" name="BowAndArrowBehaviour">
+      <interfaceRealization xmi:id="_Xbk9sMfDEeaJHezgDzPd1A" client="_MeZecMfDEeaJHezgDzPd1A" supplier="_-Qz-YMfCEeaJHezgDzPd1A" contract="_-Qz-YMfCEeaJHezgDzPd1A"/>
+      <ownedOperation xmi:id="_MeZeccfDEeaJHezgDzPd1A" name="useWeapon"/>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_MeZecsfDEeaJHezgDzPd1A" name="AxeBehaviour">
+        <ownedOperation xmi:id="_MeZec8fDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_MeZedMfDEeaJHezgDzPd1A" name="SwordBehaviour">
+        <ownedOperation xmi:id="_MeZedcfDEeaJHezgDzPd1A" name="useWeapon"/>
+      </nestedClassifier>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_coRFAMfDEeaJHezgDzPd1A" name="Has one or many" memberEnd="_coRFAcfDEeaJHezgDzPd1A _coRFBMfDEeaJHezgDzPd1A" navigableOwnedEnd="_coRFAcfDEeaJHezgDzPd1A _coRFBMfDEeaJHezgDzPd1A">
+      <ownedEnd xmi:id="_coRFAcfDEeaJHezgDzPd1A" name="characters" type="_W3fEEMfBEeaGPcrUwNj8lQ" association="_coRFAMfDEeaJHezgDzPd1A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_coRFAsfDEeaJHezgDzPd1A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_coRFA8fDEeaJHezgDzPd1A" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_coRFBMfDEeaJHezgDzPd1A" name="weaponBehaviours" type="_-Qz-YMfCEeaJHezgDzPd1A" association="_coRFAMfDEeaJHezgDzPd1A">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_coRFBcfDEeaJHezgDzPd1A" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_coRFBsfDEeaJHezgDzPd1A" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

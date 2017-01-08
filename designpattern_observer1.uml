@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_gZyp8Mn0EeaUer32Es_x3g" name="NewModel">
+  <packagedElement xmi:type="uml:Class" xmi:id="_0ah3kMn4EeaYXeU67VZWqQ" name="WeatherStation">
+    <interfaceRealization xmi:id="_lYbU4Mn5EeaYXeU67VZWqQ" client="_0ah3kMn4EeaYXeU67VZWqQ" supplier="_Gl7RAMn5EeaYXeU67VZWqQ" contract="_Gl7RAMn5EeaYXeU67VZWqQ"/>
+    <ownedOperation xmi:id="_U3EbYMn5EeaYXeU67VZWqQ" name=""/>
+    <ownedOperation xmi:id="_-2dOcMn5EeaYXeU67VZWqQ" name="removeObserver">
+      <ownedParameter xmi:id="_-2dOccn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="__kUaAMn5EeaYXeU67VZWqQ" name="registerObserver">
+      <ownedParameter xmi:id="__kUaAcn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_AMZtsMn6EeaYXeU67VZWqQ" name="notifyObservers"/>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_9efV8Mn5EeaYXeU67VZWqQ" name="Subject">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_9efV8cn5EeaYXeU67VZWqQ" name="Subject"/>
+      <ownedOperation xmi:id="_9efV8sn5EeaYXeU67VZWqQ" name="registerObserver">
+        <ownedParameter xmi:id="_9efV88n5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_9efV9Mn5EeaYXeU67VZWqQ" name="removeObserver">
+        <ownedParameter xmi:id="_9efV9cn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_9efV9sn5EeaYXeU67VZWqQ" name="notifyObservers"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Interface" xmi:id="_96TvQMn5EeaYXeU67VZWqQ" name="Subject">
+      <nestedClassifier xmi:type="uml:Class" xmi:id="_96TvQcn5EeaYXeU67VZWqQ" name="Subject"/>
+      <ownedOperation xmi:id="_96TvQsn5EeaYXeU67VZWqQ" name="registerObserver">
+        <ownedParameter xmi:id="_96TvQ8n5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_96TvRMn5EeaYXeU67VZWqQ" name="removeObserver">
+        <ownedParameter xmi:id="_96TvRcn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_96TvRsn5EeaYXeU67VZWqQ" name="notifyObservers"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_CI6TIMn5EeaYXeU67VZWqQ" name="CurrentConditionsDisplay">
+    <interfaceRealization xmi:id="_hYLykMn5EeaYXeU67VZWqQ" client="_CI6TIMn5EeaYXeU67VZWqQ" supplier="_JRvXAMn5EeaYXeU67VZWqQ" contract="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    <interfaceRealization xmi:id="_i7KBMMn5EeaYXeU67VZWqQ" client="_CI6TIMn5EeaYXeU67VZWqQ" supplier="_VtFdYMn5EeaYXeU67VZWqQ" contract="_VtFdYMn5EeaYXeU67VZWqQ"/>
+    <ownedOperation xmi:id="_Z2uzUMn5EeaYXeU67VZWqQ" name="update"/>
+    <ownedOperation xmi:id="_aV9tAMn5EeaYXeU67VZWqQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_Gl7RAMn5EeaYXeU67VZWqQ" name="Subject">
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_JDnbcMn5EeaYXeU67VZWqQ" name="Subject"/>
+    <ownedOperation xmi:id="_LRUpIMn5EeaYXeU67VZWqQ" name="registerObserver">
+      <ownedParameter xmi:id="_M8jb4Mn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2Of6IMn5EeaYXeU67VZWqQ" name="removeObserver">
+      <ownedParameter xmi:id="_2Of6Icn5EeaYXeU67VZWqQ" name="observer" type="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_6vG-kMn5EeaYXeU67VZWqQ" name="notifyObservers"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_JRvXAMn5EeaYXeU67VZWqQ" name="Observer">
+    <ownedOperation xmi:id="_KmgKgMn5EeaYXeU67VZWqQ" name="update"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_VtFdYMn5EeaYXeU67VZWqQ" name="Display">
+    <ownedOperation xmi:id="_VtFdYcn5EeaYXeU67VZWqQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_aztY8Mn5EeaYXeU67VZWqQ" name="StatisticsDisplay">
+    <interfaceRealization xmi:id="_iX90kMn5EeaYXeU67VZWqQ" client="_aztY8Mn5EeaYXeU67VZWqQ" supplier="_VtFdYMn5EeaYXeU67VZWqQ" contract="_VtFdYMn5EeaYXeU67VZWqQ"/>
+    <interfaceRealization xmi:id="_jgGhUMn5EeaYXeU67VZWqQ" client="_aztY8Mn5EeaYXeU67VZWqQ" supplier="_JRvXAMn5EeaYXeU67VZWqQ" contract="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    <ownedOperation xmi:id="_aztY8cn5EeaYXeU67VZWqQ" name="update"/>
+    <ownedOperation xmi:id="_aztY8sn5EeaYXeU67VZWqQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_eDDCwMn5EeaYXeU67VZWqQ" name="ForecastDisplay">
+    <interfaceRealization xmi:id="_j_ZscMn5EeaYXeU67VZWqQ" client="_eDDCwMn5EeaYXeU67VZWqQ" supplier="_JRvXAMn5EeaYXeU67VZWqQ" contract="_JRvXAMn5EeaYXeU67VZWqQ"/>
+    <interfaceRealization xmi:id="_kcZKcMn5EeaYXeU67VZWqQ" client="_eDDCwMn5EeaYXeU67VZWqQ" supplier="_VtFdYMn5EeaYXeU67VZWqQ" contract="_VtFdYMn5EeaYXeU67VZWqQ"/>
+    <ownedOperation xmi:id="_eDDCwcn5EeaYXeU67VZWqQ" name="update"/>
+    <ownedOperation xmi:id="_eDDCwsn5EeaYXeU67VZWqQ" name="display"/>
+  </packagedElement>
+</uml:Model>

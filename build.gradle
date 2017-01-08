@@ -22,9 +22,12 @@ sourceSets {
 repositories {
 //    mavenLocal()
     mavenCentral()
+   
 } 
 
-dependencies {
+
+dependencies { 
+testCompile "org.mockito:mockito-core:2.3.4" 
 	
   compile group: 'org.codehaus.groovy', name: 'groovy', version: '2.4.7'
    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.+'

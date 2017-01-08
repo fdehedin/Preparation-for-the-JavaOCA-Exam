@@ -1,5 +1,6 @@
 package ch.fdehedin.oca.exceptions;
 
+import java.io.FileNotFoundException;
 import java.util.logging.Logger;
 
 import ch.fdehedin.oca.Lambdas.ArrayLambdaTester;
@@ -18,14 +19,15 @@ public class FinallyAndAfterTryCatchTester {
 	public static void fall() {
 		try {
 			log.info("zero div:" + 0 / 0);
+		//	throw new FileNotFoundException();
 		} catch (NullPointerException e) {
 			log.info("catch:" + e);
+
 		} finally {
 			log.info("finally");
+
 		}
 		log.info("after try/catch");
 	}
 
-	
-	
 }

@@ -39,6 +39,7 @@ public class Penguin extends Bird {
 
 	}
 
+	@Override
 	public Integer getNumberOfWings() {
 		return 1;
 	};
@@ -58,4 +59,5 @@ public class Penguin extends Bird {
 		assertThat(penguin.y == 40, is(true));
 	}
 	
+
 }

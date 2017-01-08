@@ -79,9 +79,10 @@ public class StringMethodTester {
 	@Test
 	public void substring() {
 
+		String batman = "batman";
 		String result = "";
-		result = batman.substring(0, 2);
-		assertThat(result, equalTo("ba"));
+		result = batman.substring(1, 4);
+		assertThat(result, equalTo("atm"));
 
 		result = batman.substring(2, 2);
 		assertThat(result, equalTo(""));

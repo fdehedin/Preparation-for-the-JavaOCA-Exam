@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_avJoQMe4EeaGPcrUwNj8lQ" name="StrategieDucks">
+  <packageImport xmi:id="_7fKhsMe4EeaGPcrUwNj8lQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_5RNcYMe4EeaGPcrUwNj8lQ" name="Duck" isAbstract="true">
+    <ownedAttribute xmi:id="_cuCaAMe8EeaGPcrUwNj8lQ" name="flyBehaviour" type="_S0LgUMe5EeaGPcrUwNj8lQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_e1LssMe8EeaGPcrUwNj8lQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_e1Lssce8EeaGPcrUwNj8lQ" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_lWA8cMe8EeaGPcrUwNj8lQ" name="quackBehaviour" type="_VIDAYMe5EeaGPcrUwNj8lQ" aggregation="composite">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nIauMMe8EeaGPcrUwNj8lQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nIauMce8EeaGPcrUwNj8lQ" value="1"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_vzox4Me8EeaGPcrUwNj8lQ" name="performFlyBehaviour"/>
+    <ownedOperation xmi:id="_ju-QsMe9EeaGPcrUwNj8lQ" name="performQuackBehaviour"/>
+    <ownedOperation xmi:id="_oxsjsMe9EeaGPcrUwNj8lQ" name="setFlyBehaviour">
+      <ownedParameter xmi:id="_wUiqEMe9EeaGPcrUwNj8lQ" name="flyBehaviour" type="_S0LgUMe5EeaGPcrUwNj8lQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_4j1mwMe9EeaGPcrUwNj8lQ" name="setQuackBehaviour">
+      <ownedParameter xmi:id="_6UH4oMe9EeaGPcrUwNj8lQ" name="quackBehaviour" type="_VIDAYMe5EeaGPcrUwNj8lQ"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_BDLKkMe-EeaGPcrUwNj8lQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_CFptgMe5EeaGPcrUwNj8lQ" name="DuckRubber">
+    <generalization xmi:id="_IJNycMe5EeaGPcrUwNj8lQ" general="_5RNcYMe4EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_EDI7oMe-EeaGPcrUwNj8lQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_D_cgsMe5EeaGPcrUwNj8lQ" name="DuckMallerd">
+    <generalization xmi:id="_IxeFQMe5EeaGPcrUwNj8lQ" general="_5RNcYMe4EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_D5RN8Me-EeaGPcrUwNj8lQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_FGav0Me5EeaGPcrUwNj8lQ" name="DuckWood">
+    <generalization xmi:id="_HY8MEMe5EeaGPcrUwNj8lQ" general="_5RNcYMe4EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_Duao0Me-EeaGPcrUwNj8lQ" name="display"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_S0LgUMe5EeaGPcrUwNj8lQ" name="FlyBehaviour">
+    <ownedOperation xmi:id="_vHIjIMe6EeaGPcrUwNj8lQ" name="fly"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_VIDAYMe5EeaGPcrUwNj8lQ" name="QuackBehaviour">
+    <ownedOperation xmi:id="_RJvF0Me7EeaGPcrUwNj8lQ" name="quack"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rRixoMe6EeaGPcrUwNj8lQ" name="FlyWithWings">
+    <interfaceRealization xmi:id="_wziakMe6EeaGPcrUwNj8lQ" client="_rRixoMe6EeaGPcrUwNj8lQ" supplier="_S0LgUMe5EeaGPcrUwNj8lQ" contract="_S0LgUMe5EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_4hgL0Me6EeaGPcrUwNj8lQ" name="fly"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_syC7EMe6EeaGPcrUwNj8lQ" name="FlyNoWay">
+    <interfaceRealization xmi:id="_xcf4AMe6EeaGPcrUwNj8lQ" client="_syC7EMe6EeaGPcrUwNj8lQ" supplier="_S0LgUMe5EeaGPcrUwNj8lQ" contract="_S0LgUMe5EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_y8uUoMe6EeaGPcrUwNj8lQ" name="fly"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8mPMkMe6EeaGPcrUwNj8lQ" name="has a" memberEnd="_8mPMkce6EeaGPcrUwNj8lQ _8mPMlMe6EeaGPcrUwNj8lQ" navigableOwnedEnd="_8mPMlMe6EeaGPcrUwNj8lQ">
+    <ownedEnd xmi:id="_8mPMkce6EeaGPcrUwNj8lQ" name="ducks" type="_5RNcYMe4EeaGPcrUwNj8lQ" association="_8mPMkMe6EeaGPcrUwNj8lQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8mPMkse6EeaGPcrUwNj8lQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8mPMk8e6EeaGPcrUwNj8lQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_8mPMlMe6EeaGPcrUwNj8lQ" name="flyBehaviour" type="_S0LgUMe5EeaGPcrUwNj8lQ" aggregation="composite" association="_8mPMkMe6EeaGPcrUwNj8lQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8mPMlce6EeaGPcrUwNj8lQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8mPMlse6EeaGPcrUwNj8lQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_q554QMe7EeaGPcrUwNj8lQ" name="Quack">
+    <interfaceRealization xmi:id="_3YUgwMe7EeaGPcrUwNj8lQ" client="_q554QMe7EeaGPcrUwNj8lQ" supplier="_VIDAYMe5EeaGPcrUwNj8lQ" contract="_VIDAYMe5EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_uIqTQMe7EeaGPcrUwNj8lQ" name="quack"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_scxZMMe7EeaGPcrUwNj8lQ" name="Squeek">
+    <interfaceRealization xmi:id="_3_sp0Me7EeaGPcrUwNj8lQ" client="_scxZMMe7EeaGPcrUwNj8lQ" supplier="_VIDAYMe5EeaGPcrUwNj8lQ" contract="_VIDAYMe5EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_11vTsMe7EeaGPcrUwNj8lQ" name="quack"/>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_wL-14Me7EeaGPcrUwNj8lQ" name="Duck"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xlm7QMe7EeaGPcrUwNj8lQ" name="Silence">
+    <interfaceRealization xmi:id="_4c_p0Me7EeaGPcrUwNj8lQ" client="_xlm7QMe7EeaGPcrUwNj8lQ" supplier="_VIDAYMe5EeaGPcrUwNj8lQ" contract="_VIDAYMe5EeaGPcrUwNj8lQ"/>
+    <ownedOperation xmi:id="_xlm7Qce7EeaGPcrUwNj8lQ" name="quack"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_5-QoQMe7EeaGPcrUwNj8lQ" name="has a" memberEnd="_5-QoQce7EeaGPcrUwNj8lQ _5-QoRMe7EeaGPcrUwNj8lQ" navigableOwnedEnd="_5-QoRMe7EeaGPcrUwNj8lQ">
+    <ownedEnd xmi:id="_5-QoQce7EeaGPcrUwNj8lQ" name="ducks" type="_5RNcYMe4EeaGPcrUwNj8lQ" association="_5-QoQMe7EeaGPcrUwNj8lQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5-QoQse7EeaGPcrUwNj8lQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5-QoQ8e7EeaGPcrUwNj8lQ" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_5-QoRMe7EeaGPcrUwNj8lQ" name="quackBehaviour" type="_VIDAYMe5EeaGPcrUwNj8lQ" aggregation="composite" association="_5-QoQMe7EeaGPcrUwNj8lQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5-QoRce7EeaGPcrUwNj8lQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5-QoRse7EeaGPcrUwNj8lQ" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

@@ -4,9 +4,9 @@ import ch.fdehedin.patterns.decorator.cafe.beverages.Beverage;
 
 public class Soy extends CondimentDecorator {
 
-	Beverage beverage;
-
+	
 	public Soy(Beverage beverage) {
+		super(beverage);
 		this.beverage = beverage;
 	}
 
@@ -17,7 +17,20 @@ public class Soy extends CondimentDecorator {
 
 	@Override
 	public double cost() {
-		return beverage.cost() + .55;
+
+		double result = 0.0;
+
+		switch (beverage.getSize()) {
+		case LARGE:
+			result = beverage.cost() + .65;
+		case MEDIUM:
+			result = beverage.cost() + .55;
+		case SMALL:
+			result = beverage.cost() + .35;
+		}
+
+		return result;
+
 	}
 
 }

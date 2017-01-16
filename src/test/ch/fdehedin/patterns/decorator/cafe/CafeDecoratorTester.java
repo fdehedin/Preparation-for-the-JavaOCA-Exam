@@ -1,5 +1,6 @@
 package ch.fdehedin.patterns.decorator.cafe;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.junit.Test;
@@ -20,20 +21,23 @@ public class CafeDecoratorTester {
 
 	@Test
 	public void orderCafe() {
-		Beverage beverage = new Espresso();
-		LOGGER.info(beverage.getDescription() + " CHF " + beverage.cost());
+		try {
+			Beverage beverage = new Espresso(Beverage.Size.MEDIUM);
+			LOGGER.info(beverage.getDescription() + " CHF " + beverage.cost());
 
-		Beverage beverage2 = new Lavazza();
-		beverage2 = new Soy(beverage2);
-		LOGGER.info(beverage2.getDescription() + " CHF " + beverage2.cost());
+			Beverage beverage2 = new Lavazza(Beverage.Size.SMALL);
+			beverage2 = new Soy(beverage2);
+			LOGGER.info(beverage2.getDescription() + " CHF " + beverage2.cost());
 
-		Beverage beverage3 = new HouseBlend();
-		beverage3 = new Soy(beverage3);
-		beverage3 = new Mocha(beverage3);
-		beverage3 = new Whip(beverage3);
-		beverage3 = new Whip(beverage3);
-		LOGGER.info(beverage3.getDescription() + " CHF " + beverage3.cost());
-
+			Beverage beverage3 = new HouseBlend(Beverage.Size.LARGE);
+			beverage3 = new Soy(beverage3);
+			beverage3 = new Mocha(beverage3);
+			beverage3 = new Whip(beverage3);
+			beverage3 = new Whip(beverage3);
+			LOGGER.info(beverage3.getDescription() + " CHF " + beverage3.cost());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

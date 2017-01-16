@@ -2,8 +2,9 @@ package ch.fdehedin.patterns.decorator.cafe.beverages;
 
 public class HouseBlend extends Beverage {
 
-	public HouseBlend() {
-		description = "House Blend Coffee";
+	public HouseBlend(Size size) {
+		super(size);
+		description = String.format("House Blend Coffee (%s)", this.size);
 	}
 
 	@Override

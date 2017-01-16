@@ -3,11 +3,9 @@ package ch.fdehedin.patterns.decorator.cafe.condiments;
 import ch.fdehedin.patterns.decorator.cafe.beverages.Beverage;
 
 public class Whip extends CondimentDecorator {
-
-	Beverage beverage;
-
 	public Whip(Beverage beverage) {
-		this.beverage = beverage;
+		super(beverage);
+
 	}
 
 	@Override
@@ -17,7 +15,20 @@ public class Whip extends CondimentDecorator {
 
 	@Override
 	public double cost() {
-		return beverage.cost() + .85;
+
+		double result = 0.0;
+
+		switch (beverage.getSize()) {
+		case LARGE:
+			result = beverage.cost() + .13;
+		case MEDIUM:
+			result = beverage.cost() + .7;
+		case SMALL:
+			result = beverage.cost() + .5;
+		}
+
+		return result;
+
 	}
 
 }

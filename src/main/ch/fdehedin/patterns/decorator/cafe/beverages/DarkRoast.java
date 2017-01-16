@@ -2,8 +2,9 @@ package ch.fdehedin.patterns.decorator.cafe.beverages;
 
 public class DarkRoast extends Beverage {
 
-	public DarkRoast() {
-		description = "Dark Roast";
+	public DarkRoast(Size size) {
+		super(size);
+		description = String.format("Dark Roast (%s)", this.size);
 	}
 
 	@Override

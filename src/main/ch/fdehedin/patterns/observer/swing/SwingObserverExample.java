@@ -7,8 +7,6 @@ import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 
-import ch.fdehedin.patterns.javaobserver.weather.impl.CurrentConditionsDisplay;
-
 public class SwingObserverExample {
 	JFrame frame;
 	private static final Logger LOGGER = Logger.getLogger(SwingObserverExample.class.getSimpleName());

@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 import static org.mockito.Mockito.*;
@@ -15,6 +16,13 @@ import static org.hamcrest.Matchers.is;
 
 public class MockitoTest {
 
+	@Test
+	public void testGetter(){
+		PseudoDatabase db = new PseudoDatabase();
+		Mockito.when(databaseMock.toString()).thenReturn("123");
+		assertThat(databaseMock.toString(), equalTo("123"));
+	}
+	
 	@Mock
 	PseudoDatabase databaseMock;
 

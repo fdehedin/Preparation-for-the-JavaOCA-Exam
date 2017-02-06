@@ -1,11 +1,7 @@
 package ch.fdehedin.patterns.javaobserver.weather.impl;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Observable;
-
 import java.util.Observer;
-import ch.fdehedin.patterns.observer.interfaces.Subject;
 
 public class WeatherStation extends Observable {
 

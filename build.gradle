@@ -4,6 +4,27 @@ apply plugin: 'eclipse'
 // JDK 8
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
+version = '1.0'
+
+compileJava {
+    //enable compilation in a separate daemon process
+    options.fork = true
+
+    //enable incremental compilation
+    options.incremental = false
+}
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'Gradle Jar File Example',
+        	'Implementation-Version': version,
+        	'Main-Class': 'ch.fdehedin.patterns.observer.swing.SwingObserverExample'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
 
 sourceSets {
     main {

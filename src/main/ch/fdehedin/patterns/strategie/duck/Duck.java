@@ -2,8 +2,6 @@ package ch.fdehedin.patterns.strategie.duck;
 
 import java.util.logging.Logger;
 
-import ch.fdehedin.oca.DateAndTimes.LocalDateTimeTester;
-
 public abstract class Duck {
 
 	private static final Logger LOGGER = Logger.getLogger(Duck.class.getSimpleName());

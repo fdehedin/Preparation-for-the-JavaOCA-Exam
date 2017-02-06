@@ -5,7 +5,6 @@ import java.util.logging.Logger;
 import ch.fdehedin.patterns.observer.interfaces.Display;
 import ch.fdehedin.patterns.observer.interfaces.Observer;
 import ch.fdehedin.patterns.observer.interfaces.Subject;
-import ch.fdehedin.patterns.strategie.duck.DuckMallard;
 
 public class CurrentConditionsDisplay implements Observer, Display {
 

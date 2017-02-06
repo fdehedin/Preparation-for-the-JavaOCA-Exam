@@ -1,8 +1,10 @@
 package ch.fdehedin.patterns.factory.simple.invoicing;
 
-public class InvoiceFactory {
+public class InvoicingApplicationCloud extends InvoicingApplication {
 
-	public Invoice createInvoice(InvoiceType invoiceType) {
+	@Override
+	protected Invoice generateInvoice(InvoiceType invoiceType) {
+
 		Invoice invoice = null;
 
 		switch (invoiceType) {
@@ -17,9 +19,7 @@ public class InvoiceFactory {
 			break;
 		default:
 			break;
-
 		}
-
 		return invoice;
 	}
 
